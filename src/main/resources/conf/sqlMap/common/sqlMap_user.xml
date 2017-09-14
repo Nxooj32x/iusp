@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="user">
+    <resultMap id="userMap" type="org.iusp.common.bean.User">
+        <id column="id" property="id"/>
+        <result column="username" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="access" property="access"/>
+        <result column="createtime" property="createTime"/>
+    </resultMap>
+
+    <select id="findUserById" parameterType="org.iusp.common.bean.User"
+            resultMap="userMap">
+        SELECT
+        *
+        FROM
+        IUSP_COMMON_USER
+        WHERE
+        id = #{id}
+    </select>
+
+    <select id="gettotalcount" resultType="int" parameterType="java.util.Map">
+        select count(id) from IUSP_COMMON_USER where 1=1
+    </select>
+
+    <select id="queryUserForPage" parameterType="java.util.Map" resultMap="userMap">
+        select * from IUSP_COMMON_USER where 1=1
+        limit #{startIndex},#{pageSize}
+    </select>
+
+    <select id="findUserByUserName" parameterType="org.iusp.common.bean.User"
+            resultMap="userMap">
+        SELECT
+        *
+        FROM
+        IUSP_COMMON_USER
+        WHERE
+        username = #{userName}
+    </select>
+</mapper>
