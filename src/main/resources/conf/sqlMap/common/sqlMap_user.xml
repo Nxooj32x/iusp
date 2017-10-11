@@ -4,11 +4,28 @@
 <mapper namespace="user">
     <resultMap id="userMap" type="org.iusp.common.bean.User">
         <id column="id" property="id"/>
-        <result column="username" property="userName"/>
+        <result column="name" property="name"/>
         <result column="password" property="password"/>
-        <result column="access" property="access"/>
-        <result column="createtime" property="createTime"/>
+        <result column="email" property="email"/>
+        <result column="status" property="status"/>
+        <result column="registAppId" property="registAppId"/>
+        <result column="registdate" property="registdate"/>
+        <result column="updatedate" property="updatedate"/>
+        <result column="field1" property="field1"/>
+        <result column="field2" property="field2"/>
+        <result column="field3" property="field3"/>
+        <result column="type" property="type"/>
+        <result column="source" property="source"/>
+        <result column="mobilePhone" property="mobilePhone"/>
+        <result column="phoneState" property="phoneState"/>
+        <result column="emailState" property="emailState"/>
     </resultMap>
+
+    <select id="selectAll" resultMap="userMap" parameterType="java.util.Map">
+        select
+        *
+        from IUSP_COMMON_USER where 1=1
+    </select>
 
     <select id="findUserById" parameterType="org.iusp.common.bean.User"
             resultMap="userMap">
@@ -36,6 +53,6 @@
         FROM
         IUSP_COMMON_USER
         WHERE
-        username = #{userName}
+        name = #{name}
     </select>
 </mapper>

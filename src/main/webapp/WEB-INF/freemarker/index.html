@@ -1,9 +1,40 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perspective Seat Preview | Codrops</title>
+    <meta name="description" content="An experimental demo where a 3D perspective preview is shown for a selected seat in a cinema room." />
+    <meta name="keywords" content="cinema, seat booking, seating plan, perspective, 3d" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="${resRoot}/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="${resRoot}/css/component.css" />
+    <script src="${resRoot}/js/modernizr-custom.js"></script>
 </head>
-<body>
-freemarker
+<body class="loading">
+<header class="header">
+    <h1 class="header__title">Love Preview</h1>
+</header>
+<div class="plan">
+    <div class="rows rows--mini" id="j-rows">
+    </div>
+    <!-- /rows -->
+</div><!-- /plan -->
+<script src="${resRoot}/js/jquery.min.js"></script>
+<script src="${resRoot}/js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="${resRoot}/assets/js/seajs/sea-debug.js"></script>
+<script>
+    seajs.config({
+        alias:{},
+        // 调试模式
+        debug: true,
+        base:"${resRoot}/js/module/",
+        // 文件编码
+        charset: 'utf-8'
+    });
+</script>
+<script type="text/javascript" src="${resRoot}/js/module/main.js"></script>
 </body>
 </html>

@@ -27,9 +27,9 @@ public class UserLoginServiceImpl  implements UserDetailsService{
 
         try {
             org.iusp.common.bean.User u = userDao.findUserByUserName(username);
-            user = new org.springframework.security.core.userdetails.User(u.getUserName(), u.getPassword()
+            user = new org.springframework.security.core.userdetails.User(u.getName(), u.getPassword()
                     .toLowerCase(), true, true, true, true,
-                    getAuthorities(u.getAccess()));
+                    getAuthorities(u.getStatus()));
 
         } catch (Exception e) {
             logger.error("Error in retrieving user");

@@ -3,20 +3,27 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:cutesource="http://blog.csdn.net/cutesource/schema/people"
+    xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
-	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://blog.csdn.net/cutesource/schema/people http://blog.csdn.net/cutesource/schema/people.xsd">
 
-	<!-- 注册相关后置处理器,扫描包路径下的注解配置 -->
-	<context:component-scan base-package="org.iusp" />
+	<cutesource:people id="cutesource" name="袁志俊" age="27"/>
+
+	<bean id="configDao" class="org.iusp.base.dao.impl.xml.ConfigImplDao">
+		<property name="basePath" value="classpath:./xml"/>
+	</bean>
 
 	<!-- 初始化properties文件,变量值可通过系统属性更改 -->
 	<bean id="propertyConfig"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location">
-			<value>classpath:conf/main-setting.properties</value>
+		<property name="locations">
+			<list>
+				<value>classpath:conf/main-setting.properties</value>
+			</list>
 		</property>
 		<property name="systemPropertiesModeName"
 			value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />

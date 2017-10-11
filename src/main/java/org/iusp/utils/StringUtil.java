@@ -425,5 +425,8 @@ public class StringUtil {
     }
 
     public static void main(String[] args) {
+
+        String md5 = md5("123456");
+        System.out.println(md5);
     }
 }

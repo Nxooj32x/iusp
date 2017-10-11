@@ -17,6 +17,7 @@ import org.iusp.utils.QueryResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,7 +28,6 @@ import java.util.Map;
  * @see [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */
-@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -51,6 +51,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findUserByUserName(String userName) {
         return userDao.findUserByUserName(userName);
+    }
+
+    @Override
+    public List<User> selectAll() {
+        return userDao.selectAll() ;
     }
 
 }

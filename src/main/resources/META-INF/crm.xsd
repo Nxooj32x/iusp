@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns="http://org.iusp.cn/custom/schema/crm"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:beans="http://www.springframework.org/schema/beans"
+        targetNamespace="http://org.iusp.cn/custom/schema/crm"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified">
+    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+
+    <xsd:element name="controller" type="controller">
+        <xsd:annotation>
+            <xsd:documentation source="org.iusp.base.ctxml.controller.CrmController">The element which creates a DWR specific controller. You can use the id/name attribute to identify the controller in order to map it to a certain path. You can also use the optional debug attribute to allow access to the generated debug pages.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="controller">
+        <xsd:sequence>
+            <xsd:element name="config-param" type="config-param" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID"/>
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+    <xsd:complexType name="config-param">
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="value" type="xsd:string" use="required"/>
+    </xsd:complexType>
+</xsd:schema>

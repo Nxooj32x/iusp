@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.github.pagehelper.PageHelper;
 import org.iusp.base.BaseDao;
 import org.iusp.common.bean.User;
 import org.iusp.common.dao.UserDao;
@@ -28,7 +29,6 @@ import org.springframework.stereotype.Component;
  * @see [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */
-@Component
 public class UserDaoImpl extends BaseDao implements UserDao {
 
     /*
@@ -69,7 +69,14 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public User findUserByUserName(String userName) {
         User user = new User();
-        user.setUserName(userName);
+        user.setName(userName);
         return this.getSqlSession().selectOne("user.findUserByUserName", user);
+    }
+
+    @Override
+    public List<User> selectAll() {
+        Map paramMap = new HashMap();
+        paramMap.put("username", "wangtao");
+        return this.getSqlSession().selectList("user.selectAll",paramMap);
     }
 }

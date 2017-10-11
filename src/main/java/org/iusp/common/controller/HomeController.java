@@ -13,9 +13,9 @@ package org.iusp.common.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.Path;
 
 import org.iusp.base.BaseController;
+import org.iusp.base.ctxml.model.People;
 import org.iusp.common.bean.User;
 import org.iusp.common.service.UserService;
 import org.iusp.utils.QueryResult;
@@ -39,6 +39,9 @@ import java.util.HashMap;
 @Controller
 public class HomeController extends BaseController {
 
+    @Autowired
+    private People cutesource;
+
     /**
      * LOG对象
      */
@@ -49,6 +52,7 @@ public class HomeController extends BaseController {
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String home(HttpServletRequest request, HttpServletResponse response) {
+        log.info("custom xml bean {}",cutesource);
         return "index";
     }
 

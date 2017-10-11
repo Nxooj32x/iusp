@@ -4,6 +4,7 @@ package org.iusp.common.service;
 import org.iusp.common.bean.User;
 import org.iusp.utils.QueryResult;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,5 +23,6 @@ public interface UserService {
 
     public User findUserByUserName(String userName);
 
+    public List<User> selectAll();
 
 }

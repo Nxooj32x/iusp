@@ -1,112 +1,190 @@
-/*
- * Copyright (C), 2013-2014, 南京华内斯信息技术有限公司
- * FileName: User.java
- * Author:   dong
- * Date:     Nov 4, 2014 11:27:30 PM
- * Description: //模块目的、功能描述      
- * History: //修改记录
- * <author>      <time>      <version>    <desc>
- * 修改人姓名             修改时间            版本号                  描述
- */
 package org.iusp.common.bean;
-import org.springframework.security.core.GrantedAuthority;
 
-import java.util.Collection;
+
+import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 〈一句话功能简述〉<br>
- * 〈功能详细描述〉
- * 
- * @author dong
- * @see [相关类/方法]（可选）
- * @since [产品/模块版本] （可选）
+ * 用户信息
+ * @author guodong
+ *
  */
-public class User {
+public class User implements Serializable{
 
-    private Integer id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3084343337864236055L;
+	/**
+	 * 用户状态：正常
+	 */
+	public static final int USER_STATUS_ACTIVE = 0;
+	/**
+	 * 用户状态：锁定
+	 */
+	public static final int USER_STATUS_UNACTIVE = 1;
+	/**
+	 * 用户状态：停用
+	 */
+	public static final int USER_STATUS_UNUSED = 2;
+	
+	public static final String USER_EMAIL_ACTIVE = "0";//邮箱已激活
+	
+	public static final String USER_EMAIL_UNACTIVE = "1";//邮箱未激活
+	
+	/**用户ID*/
+	private int id;
+	/**登陆名*/
+	private String name;
+	/**密码*/
+	private String password;
+	/**邮箱*/
+	private String email;	
+	/**用户状态 
+	 * 可选值为：
+	 * 		USER_STATUS_ACTIVE 0
+	 * 		USER_STATUS_UNACTIVE 1
+	 * 		USER_STATUS_UNUSED 2
+	 * 		其他自定义状态
+	 */
+	private int status;
+	/**用户属于注册于哪个APP*/
+	private String registAppId;
+	/**注册时间*/
+	private Date registdate;
+	/**修改时间*/
+	private Date updatedate;
+	/**预留字段1*/
+	private String field1;
+	/**预留字段2*/
+	private String field2;
+	/**预留字段3*/
+	private String field3;
+	/**账号类型
+	 * app/user
+	 * 
+	 * */
+	private String type;
+	
+	/**账号来源
+	 * register/system
+	 * 
+	 * */
+	private String source;
+	/**
+	 * 手机号码
+	 */
+	private String mobilePhone;
+	/**
+	 * 手机激活状态【0：激活，1：未激活，2：停用】
+	 */
+	private String phoneState;
+	/**
+	 * 邮箱激活状态【0：激活，1：未激活，2：停用】
+	 */
+	private String emailState;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Date getRegistdate() {
+		return registdate;
+	}
+	public void setRegistdate(Date registdate) {
+		this.registdate = registdate;
+	}
+	public Date getUpdatedate() {
+		return updatedate;
+	}
+	public void setUpdatedate(Date updatedate) {
+		this.updatedate = updatedate;
+	}
 
-    private String userName;
-
-    private String password;
-
-    private Integer  access;
-
-    private Date createTime;
-
-    /**
-     * @return the id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the userName
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    /**
-     * @param userName the userName to set
-     */
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    /**
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
-    /**
-     * @return the createTime
-     */
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    /**
-     * @param createTime the createTime to set
-     */
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Integer getAccess() {
-        return access;
-    }
-
-    public void setAccess(Integer access) {
-        this.access = access;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", access=" + access +
-                ", createTime=" + createTime +
-                '}';
-    }
+	public String getField1() {
+		return field1;
+	}
+	public void setField1(String field1) {
+		this.field1 = field1;
+	}
+	public String getField2() {
+		return field2;
+	}
+	public void setField2(String field2) {
+		this.field2 = field2;
+	}
+	public String getField3() {
+		return field3;
+	}
+	public void setField3(String field3) {
+		this.field3 = field3;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	public String getRegistAppId() {
+		return registAppId;
+	}
+	public void setRegistAppId(String registAppId) {
+		this.registAppId = registAppId;
+	}
+	public String getSource() {
+		return source;
+	}
+	public void setSource(String source) {
+		this.source = source;
+	}
+	public String getMobilePhone() {
+		return mobilePhone;
+	}
+	public void setMobilePhone(String mobilePhone) {
+		this.mobilePhone = mobilePhone;
+	}
+	public String getPhoneState() {
+		return phoneState;
+	}
+	public void setPhoneState(String phoneState) {
+		this.phoneState = phoneState;
+	}
+	public String getEmailState() {
+		return emailState;
+	}
+	public void setEmailState(String emailState) {
+		this.emailState = emailState;
+	}
+	
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", email=" + email + ", status=" + status
+				+ ", type=" + type + "]";
+	}
 }

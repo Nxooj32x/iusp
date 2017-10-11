@@ -1,0 +1,32 @@
+CASH_LABEL = {
+    id:"ID",
+    ctime:"创建时间",
+    status:"提现状态",
+    type:"提现类型",
+    way:"提现方式",
+    accoutBank:"开户行",
+    accoutName:"账户名",
+    accout:"转出账号",
+    accountId:"账号ID",
+    ownerId:"所属对象",
+    userId:"所属用户",
+    applyUserId:"申请用户ID",
+    applyUserName:"申请用户姓名",
+    applyTime:"申请时间",
+    applyNote:"申请说明",
+    applyCashMoney:"申请提现金额",
+    actualCashMoney:"实际提现金额",
+    commission:"服务费",
+    opUserId:"操作人ID",
+    opUserName:"操作人名称",
+    opTime:"处理时间",
+    opNote:"处理备注",
+    inChshCode:"明细流水号",
+    outChshCode:"转账交易号",
+
+
+    title:"服务商提现管理",
+    unknown:"未知数",
+    detailCash:"处理提现",
+    editCash:"管理-提现处理"
+}

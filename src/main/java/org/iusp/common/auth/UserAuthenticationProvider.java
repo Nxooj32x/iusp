@@ -34,7 +34,7 @@ public class UserAuthenticationProvider implements AuthenticationProvider  {
                     user.setName(token.getPrincipal().toString());
                     user.setPwd(token.getCredentials().toString());
                     user.setAuthenticated(true);
-                    Set<GrantedAuthority> authorities = getAuthorities(userByUserName.getAccess());
+                    Set<GrantedAuthority> authorities = getAuthorities(userByUserName.getStatus());
                     user.setAccesses(authorities);
                     return user;
                 }else {
