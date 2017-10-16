@@ -67,5 +67,10 @@ public class HomeController extends BaseController {
         return userByPageno;
     }
 
+    @RequestMapping(value = "/admin/index",method = RequestMethod.GET)
+    public String adminIndex(HttpServletRequest request, HttpServletResponse response) {
+
+        return "admin/index";
+    }
 
 }

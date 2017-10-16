@@ -1,2 +1,1 @@
 http\://blog.csdn.net/cutesource/schema/people=org.iusp.base.ctxml.handler.MyNamespaceHandler
-http\://org.iusp.cn/custom/schema/crm=org.iusp.base.ctxml.handler.CrmNamespaceHandler

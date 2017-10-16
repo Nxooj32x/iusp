@@ -2,12 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
-       xmlns:crm="http://org.iusp.cn/custom/schema/crm"
+       xmlns:admin="http://org.iusp.cn/custom/schema/admin"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.directwebremoting.org/schema/spring-dwr
        http://www.directwebremoting.org/schema/spring-dwr/spring-dwr-3.0.xsd
-       http://org.iusp.cn/custom/schema/crm http://org.iusp.cn/custom/schema/crm.xsd">
+       http://org.iusp.cn/custom/schema/admin
+       http://org.iusp.cn/custom/schema/admin.xsd ">
 
     <!-- DWR配置 -->
     <bean
@@ -30,7 +31,7 @@
         <property name="mappings">
             <props>
                 <prop key="/dwr/**/*">dwrController</prop>
-                <prop key="/rm/**/*">crmController</prop>
+                <prop key="/rm/**/*">iadminController</prop>
             </props>
         </property>
     </bean>
@@ -53,10 +54,10 @@
     </dwr:controller>
     <dwr:annotation-config/>
 
-    <crm:controller id="crmController" name="crmController">
-        <crm:config-param name="allowScriptTagRemoting"
-                          value="true"/>
-    </crm:controller>
+    <admin:controller id="iadminController" name="iadminController">
+        <admin:config-param name="allowScriptTagRemoting"
+                            value="true"/>
+    </admin:controller>
 
     <dwr:annotation-scan scanRemoteProxy="true"
                          scanDataTransferObject="true" base-package="org.iusp.dwr"/>
