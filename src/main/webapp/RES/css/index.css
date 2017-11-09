@@ -1,0 +1,433 @@
+.wrap{width:980px; margin:0px auto; font-size:12px;}
+.headerwrap{width:100%; height:39px; background:#212a31; color:#fff;}
+.wrap a{cursor:pointer;}
+.header{line-height:39px;}
+.header .set,.header .set a{ color:#85b2c3;}
+.header .set a{ margin:0px 6px;}
+.header .set a:hover{ color:#ccc;}
+.header .username{margin-right:10px;}
+.header .set-quit{ padding-right:15px; background:url("../images/account.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/account.png*/ no-repeat; background-position:28px 2px;}
+.header .menu{padding-right:11px; line-height:39px; color:#fff; float:right; }
+.header .menu a{ margin-left:13px; padding-left:14px; background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:-92px -190px; color:#81868a;}
+.header .menu a:hover{color:#CCC;}
+.form{ background:#009EF0 url("../images/navbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/navbg.png*/ no-repeat center top; height:320px; position:relative;  width:100%;}
+.form .adver-flash,.form .wrap-con{ position:absolute; left:50%; top:0px; margin-left:-490px; height:268px; z-index:0;}
+.form .wrap-con{z-index:5;}
+.form .wrap-con .line{ width:73px; height:4px; line-height:4px; font-size:0px; background:#f4a121; position:absolute; left:538px; top:0px;}
+.navwrap{ width:980px;}
+.navwrap .logowrap{margin-top:28px;}
+.navwrap .nav{float:right;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-size:15px; margin-right:5px; display:inline;}
+.navwrap .nav span{float: left; padding:0px 5px; display:inline; color:#fff;padding-top:45px;}
+.navwrap .nav span.last{ padding-right:0px;}
+.navwrap .nav span.curse{ border-top:4px solid #f4a121; padding-top:32px;}
+.navwrap .nav span a{color:#fff;}
+.navwrap .nav a:hover{ text-decoration:none; color:#FF0}
+.form .userwrap{margin-top:16px; width:980px;}
+.userwrap .aside{ border:1px solid #66c0f6; border-radius:3px; width:658px; height:201px; float:left; display:inline;}
+.userwrap .aside .t{height:85px; line-height:85px; color:#fff;padding:0px 43px;}
+.userwrap .aside .t h3{font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; font-size:24px;}
+.userwrap .aside .t h3 span {color:#FF3}
+.userwrap .aside .t .t-bg{ float:right; display:inline; margin-top:40px; height:16px; line-height:16px; background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:-96px 5px; padding-left:13px; margin-left:17px; color:#fff;}
+.userwrap .aside .t span.logined{color:#AEE7FF}
+.userwrap .aside .t .t-bg a{color:#fff;}
+.userwrap .aside .t .t-bg a:hover{ color:#FFC; text-decoration:underline;}
+.userwrap .aside .login{font-family:\5FAE\8F6F\96C5\9ED1,sans-serif;padding:0px 23px;}
+.userwrap .aside .login .user-box,.userwrap .aside .login .password-box{width:227px; background:#fff; height:39px; margin-right:15px; display:inline; float:left; border-radius:2px; overflow:hidden;}
+.userwrap .aside .login .user-box i,.userwrap .aside .login .password-box i{background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position: -78px -53px; float:left; height:39px; width:22px; display:inline; margin-left:10px; padding-right:5px;}
+.userwrap .aside .login .password-box i{background-position:-78px -87px;}
+
+.userwrap .aside .login input{ width:180px; height:37px; border:1px solid #fff; font-size:14px; color:#333; outline:none; line-height:37px;}
+.userwrap .aside .logined {text-align:center;background:url("../images/indexdownarrow.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexdownarrow.png*/ no-repeat center -35px;margin-top:0px;zoom:1}
+.userwrap .aside .logined .transbg{height:50px; position:relative; display:inline-block; border:1px solid #66C0F6;border-radius:3px;margin:30px 20px 0 20px; width:210px}
+*+html .userwrap .aside .logined .transbg{ display:inline;}
+.userwrap .aside .logined .transbg span { display:block; background-color:#fff; opacity:0.3;filter:alpha(opacity=30);height:50px;;}
+.userwrap .aside .logined .transbg a {display:block;line-height:50px;text-align:center;color:#FFF;position:absolute;font-size:18px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif;top:0;left:0;width:210px;height:50px;}
+.userwrap .aside .logined .transbg a b { vertical-align:middle;display:inline-block;background:url("../images/indexdownarrow.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexdownarrow.png*/ no-repeat 0 0;width:10px;height:10px;margin-left:10px;}
+.userwrap .aside .logined .transbg a:hover {color:#006;}
+.userwrap .aside .logined .transbg a:hover b { background-position:0 -18px;}
+
+.userwrap input:focus{border:none; outline:none;}
+.userwrap .remind{color:#aee7ff; margin-top:27px; height:14px; line-height:14px;padding:0px 43px;}
+.userwrap .remind a{color:#aee7ff;}
+.userwrap .remind a:hover{ color:#83F7FA;text-decoration:underline;}
+.userwrap .remind .t-bg1{ padding-left:14px; background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:-96px -27px; margin-left:10px; margin-right:3px;}
+#loginbutton{width:87px; height:39px; line-height:39px; text-align:center; font-size:16px; display:block; float:left; display:inline; background:#23303d; color:#fff; border-radius:2px;}
+#loginbutton:hover{ background:#111e2b;}
+.userwrap .article{ border:1px solid #66c0f6; border-radius:3px; height:201px;float:left; display:inline; margin-left:27px; width:291px; }
+.userwrap .article .menu{height:49px; line-height:49px; padding:0px;  margin:0px;}
+.userwrap .article .menu h2{float:left; font-size:14px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; color:#fff; text-align:center; cursor:pointer; border-bottom:1px solid #66c0f6;font-weight:normal;}
+.userwrap .article .menu1 .w2{ width:290px; float:left;}
+.userwrap .article .menu2 .w2{ width:89px;}
+.userwrap .article .menu2 .w2{border-right:1px solid #8ecef7;border-left:1px solid #8ecef7;border-bottom:none;}
+.userwrap .article .menu3 .w2{ width:90px;}
+.download-l{ width:133px; float:left; _display:inline; margin-left:20px; margin-top:13px;zoom:1;}
+.download-l li{height:22px; line-height:22px; margin-top:2px;}
+.download-l li a{ padding:0px 11px 0px 21px; background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:-91px -29px; color:#fff; }
+.download-l li a:hover{ background:#1e83c7 url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat -91px -25px;line-height:22px; float:left; height:22px; border-radius:2px;zoom:1}
+*+html .download-l li a:hover {float:none;}
+.download-r{margin-top:19px; float:left; display:inline;}
+#col{
+ float: left;
+ margin-right: 10px;
+ word-wrap:break-word;
+ font-size:12px;
+}
+.colum-wrap{background:#fff;height:250px; /*假定最低高度是200px*/min-height:250px; }
+.colum-wrap a{cursor:pointer;}
+.colum{width:980px; margin:40px auto 0px auto;}
+.colum .hot{ float:left; width:303px;}
+.colum h2.t{ height:40px; line-height:40px; font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-size:18px; font-weight:normal; border-bottom:1px solid #dddddd;padding-bottom:5px}
+.hot-list{padding-top:13px;}
+.hot-list  li{padding-bottom:10px;}
+.hot-list .hot-l{ float:left; display:inline; margin-left:1px; width:47px; margin-top:8px;}
+.hot-list .num{ background:#f4a121; text-align:center; height:26px; line-height:24px; display:block; color:#fff;font-size:14px;font-weight:bold}
+.hot-list .num1{ background:#71aaed;}
+.hot-list .date{ display:block; width:47px; background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:-1px 0px; height:16px; position:relative; top:-4px; font-size:10px; color:#626060; padding-top:5px; line-height:16px; text-align:center; -webkit-text-size-adjust:none}
+.hot-list .hot-r{width:234px; margin-left:16px; display:inline; float:left;}
+.hot-list .hot-r .title{ width:235px; overflow:hidden; line-height:18px;padding:5px 0;}
+.hot-list .hot-r .title a{color:#333; }
+.hot-list .hot-r .title a:hover{color:#0093d0;}
+.hot-list .hot-r .des{line-height:18px; color:#a0a0a0;}
+
+.colum .notice{margin-left:35px; display:inline; float:left; width:303px;}
+.colum .notice li{height:28px; line-height:28px; width:300px; overflow:hidden;}
+.notice .notice-list{padding-top:17px;}
+.colum .notice li .time{float:left; line-height:28px; height:28px; width:43px; text-indent:4px; color:#0077df;}
+.colum .notice li a{ color:#515050;}
+.colum .notice li a:hover{color:#0093d0;}
+.colum .notice li.curse .time { color:#ff5224;}
+
+.colum .info{ width:285px; float:right; display:inline;}
+.colum .info .line-rule{ height:40px; line-height:40px; font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-size:18px; font-weight:normal; background:url("indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:-56px -133px; padding-left:50px;} 
+.info .p{ line-height:24px; padding-left:7px; color:#878787; margin-top:18px;}
+.info .detail{ margin-top:15px;padding-left:7px; }
+.info .detail a{ color:#e74f26; font-family:'宋体';}
+.info .detail a:hover{color:#f47553;}
+
+a{cursor:pointer;}
+.servicewrap{background:#f5f5f0; height:335px; width:100%;}
+.service {width:980px; margin:0px auto; padding-top:47px;}
+.service .article{ width:660px; float:left; display:inline;}
+.service .article .switch{ height:46px; position:relative; z-index:100; top:1px;}
+.service .article .switch h2{ width:92px; border:1px solid #d1d1d1; border-bottom:none; height:38px; margin-top:6px; float:left; margin-right:3px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; line-height:38px; text-align:center; font-size:14px; border-radius:2px; color:#808a92;cursor:pointer;}
+.service .article .switch h2.curse{ height:44px; font-size:18px; color:#333;width:110px; margin-top:0px; line-height:44px; border-bottom:1px solid #f5f5f0; }
+.service .article .switch h2{}
+
+/*1111111111111111111111111*/
+.service01 {width:300px;float:right;}
+.service01 .article{ width:300px; float:left; display:inline;}
+.service01 .article .switch{ height:46px; position:relative; z-index:100; top:1px;}
+.service01 .article .switch h2{ width:92px; border:1px solid #d1d1d1; border-bottom:none; height:38px; margin-top:6px; float:left; margin-right:3px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; line-height:38px; text-align:center; font-size:14px; border-radius:2px; color:#808a92;cursor:pointer;}
+.service01 .article .switch h2.curse{ height:44px; font-size:18px; color:#333;width:110px; margin-top:0px; line-height:44px; border-bottom:1px solid #f5f5f0; }
+.service01 .article .switch h2{}
+
+.service01 .box{ position:relative; border-top:1px solid #d1d1d1;}
+.service01 .box .imgwrap{ width:148px; float:left; height:113px;}
+.service01 .box .box-r{float:left;text-indent:24px;margin-top:30px;}
+.service01 .box .t{line-height:18px; text-indent:24px; color:#a0a0a0;}
+.service01 .servive-key{ width:240px; height:38px; border:1px solid #c5c5c5; border-radius:3px; background:#fff; margin-top:10px; position:relative;}
+.service01 .servive-key #key-input{height:35px; line-height:35px; border:1px solid #fff; padding-left:12px; color:#5f5f5f; font-size:14px; width:440px;}
+.service01 #search-keywords{ width:44px; height:38px; background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:8px -288px; display:block; position:absolute; right:0px; top:0px; cursor:pointer;}
+.service01 .list-service{width:240px; padding-left:5px; padding-top:10px;}
+.service01 .list-service li{ height:30px; width:96px; line-height:30px; float:left; display:inline; background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat ; background-position:0px -334px; padding-left:14px;}
+.service01 .list-service li a{ color:#5f5f5f;}
+.service01 .list-service li a:hover{ color:#0093d0;}
+.service01 .box .icon-info{ background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:0px -239px; width:30px; height:30px; display:block; position:absolute; bottom:10px; right:15px;}
+.service01 .help{float:right; width:290px; height:212px; border:1px solid #e2e2e2; border-radius:3px; background:#fcfcf8; overflow:hidden;}
+.service01 .help .t{ height:37px; line-height:37px; background:#eeeee7;}
+.service01 .help .t h2{ float:left; border-bottom:1px solid #d4d4d4; font-size:12px; font-weight:normal; border-left:1px solid #eeeee7; border-right:1px solid #eeeee7; width:70px; text-align:center; cursor:pointer; color:#9a9999;}
+div.service01 .help .t h2.first{ border-left:none;}
+div.service01 .help .t h2.last{border-right:none; width:74px;}
+.service01 .help .t h2.curse{color:#4a4a4a;border-left:1px solid #d4d4d4; border-right:1px solid #d4d4d4; border-bottom: none; background:#fcfcf8;}
+
+
+/*1111111111111111111111111*/
+
+
+
+
+
+
+
+.service .box{padding-top:30px; position:relative; border-top:1px solid #d1d1d1;}
+.service .box .imgwrap{ width:148px; float:left; height:113px;}
+.service .box .box-r{float:left;}
+.service .box .t{line-height:18px; height:18px; color:#a0a0a0;}
+.service .servive-key{ width:498px; height:38px; border:1px solid #c5c5c5; border-radius:3px; background:#fff; margin-top:10px; position:relative;}
+.service .servive-key #key-input{height:35px; line-height:35px; border:1px solid #fff; padding-left:12px; color:#5f5f5f; font-size:14px; width:440px;}
+.service #search-keywords{ width:44px; height:38px; background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:8px -288px; display:block; position:absolute; right:0px; top:0px; cursor:pointer;}
+.service .list-service{width:460px; padding-left:5px; padding-top:10px;}
+.service .list-service li{ height:30px; width:96px; line-height:30px; float:left; display:inline; background:url("indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat ; background-position:0px -334px; padding-left:14px;}
+.service .list-service li a{ color:#5f5f5f;}
+.service .list-service li a:hover{ color:#0093d0;}
+.service .box .icon-info{ background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:0px -239px; width:30px; height:30px; display:block; position:absolute; bottom:10px; right:15px;}
+.service .help{float:right; width:290px; height:212px; border:1px solid #e2e2e2; border-radius:3px; background:#fcfcf8; overflow:hidden;}
+.service .help .t{ height:37px; line-height:37px; background:#eeeee7;}
+.service .help .t h2{ float:left; border-bottom:1px solid #d4d4d4; font-size:12px; font-weight:normal; border-left:1px solid #eeeee7; border-right:1px solid #eeeee7; width:70px; text-align:center; cursor:pointer; color:#9a9999;}
+div.service .help .t h2.first{ border-left:none;}
+div.service .help .t h2.last{border-right:none; width:74px;}
+.service .help .t h2.curse{color:#4a4a4a;border-left:1px solid #d4d4d4; border-right:1px solid #d4d4d4; border-bottom: none; background:#fcfcf8;}
+
+.help-list{ padding-left:21px; margin-top:11px;}
+.help-list li{height:28px; line-height:28px; padding-left:17px; background:url("../images/indexbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/indexbg.png*/ no-repeat; background-position:0px -334px; width:220px; overflow:hidden;}
+.help-list li a{ color:#797979}
+.help-list li a:hover{color:#0093d0;}
+.footer{margin-top:5px; background:#333439; width:100%; padding-top:5px; color:#b0b0b2;}
+.footer a{cursor:pointer;}
+.footer a:hover{color:#CCC; text-decoration:underline;}
+.footwrap{width:980px; margin:0px auto; padding-bottom:20px;}
+.footwrap h2{ height:36px; font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; height:36px; line-height:36px; color:#7fc7e6; border-bottom:1px dotted #595a5e; font-size:14px; margin-bottom:11px;}
+.footwrap dd{float:left; display:inline;}
+.footwrap .dd-1{ padding-left:8px; width:620px; }
+.footwrap .dd-1 a.logo{ display:block; margin-top:11px;}
+.footwrap .dd-1 p{margin-top:22px; line-height:18px;}
+.footwrap .dd-2{ width:290px; margin-left:50px;}
+.footwrap .dd-2 p{ line-height:18px;margin-bottom:7px;}
+.footwrap .dd-2 a{ color:#adaeb0;}
+.footwrap .dd-3{width:280px; margin-left:50px;}
+.footwrap .dd-3 p{ line-height:18px; margin-bottom:20px;}
+.footwrap .dd-4{float:right; width:232px;}
+.footwrap .dd-4 .classroom{ margin-top:22px; width:220px;}
+.footwrap .dd-4 .classroom li{ float:left; padding-right:8px; display:inline;  line-height:18px;}
+
+
+/*用户信息*/
+.wrap{ width:980px; margin:0px auto;}
+.accountnav{ height:148px;position: relative; border-bottom:13px solid #002a4a;}
+ .accountnav .wrap-con{ height:148px;}
+.accountnav .self-service,.accountnav .callback{ position:absolute; bottom:0px; height:42px; line-height:42px;  width:468px; border-top:4px solid #ffcc00; color:#fff; font-size:18px; padding-left:22px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; display:block;}
+.accountnav .self-service{left:0px;background:#002a4a; color:#fff;}
+.accountnav .self-service .icon{ background:url("../images/selfhelp.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/selfhelp.png*/ no-repeat; width:44px; height:35px; top:10px; right:10px; display:block; position:absolute;}
+.accountnav .callback{ background:#fff; border-top-color:#d9d9d9; right:0px; color:#a4a4a4;}
+.accountnav .callback .icon{ background:url("../images/msg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/msg.png*/ no-repeat; width:30px; height:30px; top:5px; right:10px; display:block; position:absolute;}
+
+.schoolaccount{ height:72px;}
+.schoolaccount h2{ line-height:72px; color:#01599b; font-size:18px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal;}
+.schoolaccount a{ float:right; line-height:14px; height:14px; display:inline; margin-right:5px; background:url("account.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/account.png*/ no-repeat; background-position:0px -188px; padding-left:13px; margin-top:32px; color:#8e8e8e;}
+.schoolaccount a:hover{color:#0093d0;}
+.table-info{ width:978px; height:222px; border:1px solid #d1d1d1; border-radius:5px;text-align:center;}
+.table-info .detail{ color:#383E63; font-size:16px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif;}
+.table-info .person-info,.account-info{ width:484px; border-right:1px solid #d1d1d1; float:left; height:222px; position:relative; color:#7c7c7c;}
+.table-info .person-info .t,.account-info .t{ height:74px; background:#9aa8b7; color:#fff; overflow:hidden;}
+            .person-info .t .info-t,.account-info .t .info-t{ display:block; width:52px; height:20px; display:block; background:url("../images/account.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/account.png*/ no-repeat; background-position:12px -70px; text-align:center; color:#fff; padding-top:33px; margin:13px auto auto auto;}
+.table-info .person-info #nameshow{ width:174px; height:70px; overflow:hidden; border-right:1px solid #d1d1d1; position:absolute; top:110px; left:0px; color:#7c7c7c}
+#nameshow .name{ color:#768e9e; font-size:30px; font-weight:bold;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif;}
+.table-info #username{ position:absolute; top:90px; width:268px; right:23px; height:56px;border-bottom:1px solid #d1d1d1; line-height:22px; color:#7c7c7c; }
+.table-info #username .user{ color:#383E63; font-size:16px;}
+.table-info #usergroup{ width:127px; position:absolute; top:155px; right:162px; height:60px;line-height:22px; }
+.table-info #certificate{ width:140px; position:absolute; top:155px; right:0px; height:60px;line-height:22px; margin-right:10px;}
+.table-info  .line{ height:36px; position:absolute; border-right:1px solid #d1d1d1; width:5px; right:160px; top:146px;}
+
+.account-info{width:493px; border-right:none; position:relative; float:left; color:#7c7c7c;}
+.account-info .t{background:#0dadb7;}
+.account-info .t .info-t{ background-position:10px -126px;}
+.account-info #yue{ width:196px; height:105px; top:100px; left:0px; line-height:18px; position:absolute;}
+.account-info #yue .num{ font-size:36px; color:#0dadb7; line-height:50px; font-family:'arial'; font-weight:bold}
+.account-info #yue .account-finish{ color:#0dadb7;}
+
+.account-info .t-l{ width:132px; height:60px; position:absolute; top:90px; right:146px; line-height:22px;}
+.account-info .t-r{ width:132px; height:60px; position:absolute; top:90px; right:13px; line-height:22px;}
+.account-info .b-l{ width:132px; height:60px; position:absolute; top:155px; right:146px; line-height:22px;}
+.account-info .b-r{ width:132px; height:60px; position:absolute; top:155px; right:13px; line-height:22px;}
+.account-info .b-r .detail{ color:#ed0000;}
+
+.account-info .line-1{ width:5px; height:70px; border-right:1px solid #d1d1d1; position:absolute; left:195px; top:114px;}
+.account-info .line-2{ width:265px; height:5px; line-height:5px; font-size:0px; border-bottom:1px solid #d1d1d1; position:absolute; left:220px; top:142px;}
+.account-info .line-3{ width:5px; height:68px; line-height:5px; font-size:0px; border-right:1px solid #d1d1d1; position:absolute; left:344px; top:118px;}
+.manage-account{ width:100%; background:#f5f5f0; margin-top:55px;}
+.manage-account .wrap{ background:url("../images/accountbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/accountbg.png*/ no-repeat; padding:34px 0px 48px 0px;line-height:18px;}
+
+.manage-account li{width:282px; float:left; display:inline; margin-left:67px;}
+.manage-account li.first{margin-left:0px;}
+.manage-account .des{ margin-bottom:12px;padding-top:5px;}
+.manage-account .tit{font-weight:normal;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-size:14px; line-height:20px; padding-left:16px;}
+.manage-account td.t{ width:100px; vertical-align:top;}
+.manage-account li h2{font-weight:normal;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-size:18px; line-height:38px; color:#2c3d4f; text-align:center;}
+.manage-account table.list{margin:14px 0px 9px 0px; border-top:1px solid #d1d1d1; }
+.manage-account .list td{ padding-top:14px; padding-bottom:2px;}
+.manage-account  .buttons{ padding-top:20px; margin-top:22px;border-top:1px solid #d1d1d1;}
+.manage-account  .buttons .button{ background:#2c3d4f; color:#fff; text-align:center; height:30px; line-height:30px; border:none; font-weight:bold; border-radius:3px; display:inline-block}
+.manage-account  .buttons .button:hover{ background:#17324f;}
+.manage-account  .buttons .button-1{ margin-left:44px; width:93px;}
+.manage-account  .buttons .result{ display:inline-block; height:14px; line-height:14px; background:url("account.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/account.png*/ no-repeat; background-position:0px -286px; padding-left:14px; margin-left:22px;}
+.manage-account  .buttons .result a{ color:#00acff;}
+.manage-account  .buttons .result a:hover{ color:#59c6fa;}
+.manage-account  .buttons .button-2{ margin-left:33px; width:93px;}
+.manage-account  .buttons .button-3{ margin-left:10px; width:114px; background:#f4a121;}
+.manage-account  .buttons .button-3:hover{ background:#da880a;}
+.manage-account  .buttons .button-4{ margin-left:94px; width:93px;}
+
+.manage-account .list .tit{ color:#2c3d4f; padding-left:16px; background:url("../images/account.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/account.png*/ no-repeat; background-position:0px -185px;}
+.account-download{padding-top:16px; padding-bottom:86px;}
+.account-download .tit{ height:58px; line-height:58px; border-bottom:1px solid #d1d1d1;}
+.account-download h2{font-weight:normal;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-size:18px; line-height:58px; height:58px; color:#01599B;}
+.account-download .tit .rightcons{ margin-right:5px;}
+.account-download .rightcons span{ float:left; display:inline; margin-left:26px; height:14px; line-height:14px; background:url("../images/account.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/account.png*/ no-repeat; background-position:0px -188px; padding-left:17px; margin-top:28px;}
+.rightcons a{ color:#8e8e8e;}
+.rightcons a:hover{ color:#0093d0;}
+
+.download-list{padding-top:11px;}
+.download-list li{ width:172px; float:left; display:inline; margin-left:30px;}
+.download-list li.first{margin-left:0px;}
+.download-list li h3{ color:#002a4a; border-bottom:1px solid #e1e1e1; font-size:16px; height:44px; line-height:44px; background:url("../images/account.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/account.png*/ no-repeat; background-position:160px -227px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; color:#002a4a; font-weight:normal;}
+.download-list li .sys-list{padding-top:13px; line-height:24px}
+.download-list .sys-list .plist{ display:block; height:24px; padding-left:14px; background:url("../images/account.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/account.png*/ no-repeat; background-position:0px -358px;}
+.download-list .sys-list a{color:#323232;}
+.download-list .sys-list a:hover{color:#0093d0;}
+
+/*提问中心*/
+.asknav{ height:148px;position: relative; border-bottom:13px solid #002a4a;}
+.asknav .wrap-con{ height:148px;}
+.asknav .self-service,.asknav .callback{ position:absolute; bottom:0px; height:42px; line-height:42px;  width:468px; border-top:4px solid #D9D9D9; color:#fff; font-size:18px; padding-left:22px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; display:block;}
+.asknav .self-service{left:0px; background:#fff; color:#a4a4a4;}
+.asknav .self-service .icon{ background:url("../images/ask.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/ask.png*/ no-repeat; width:44px; height:33px; top:8px; right:10px; display:block; position:absolute;}
+.asknav .callback{ background:#002a4a; border-top-color:#FFCC00; right:0px; color:#fff;}
+.asknav .callback .icon{ background:url("../images/ask.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/ask.png*/ no-repeat; width:35px; height:37px; top:6px; right:10px; display:block; position:absolute; background-position:0px -61px;}
+.asknav .self-service input{height:33px; border:1px solid #fff; width:400px; background:#fff;font-size:18px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif;color:#a4a4a4;}
+.asklist{ padding-top:14px; width:980px; margin:0px auto; padding-bottom:40px;}
+.asklist .aside{float:left ; display:inline; width:730px;}
+
+.asklist .tit{ height:56px; line-height:56px;}
+.asklist .tit h2{font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; color:#01599b;}
+.asklist .tit span.fR{margin-right:5px; height:30px; line-height:30px; margin-top:15px;}
+.asklist .consule{ padding-left:13px; float:left; display:inline; height:30px; background:url("../images/ask.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/ask.png*/ no-repeat; background-position:-2px -280px;}
+.asklist .consule a{color:#8e8e8e;}
+.asklist .consule a:hover{color:#0093d0;}
+.asklist .askbutton{margin-left:24px; display:inline; float:left; width:93px; height:30px; line-height:30px; text-align:center; color:#fff; font-weight:bold; background:#0dadb7; border-radius:3px;}
+.asklist .askbutton:hover{ background:#12939b;}
+
+.question-list{border-top:1px solid #d1d1d1;}
+.question-list li{height:70px; border-bottom:1px solid #ededed;}
+.question-list li.curse{background:#f9f9f9;}
+.question-list li .li-l{ width:600px; padding-left:15px; float:left;}
+.question-list .time{ color:#1fa1f0; font-size:10px; padding-top:10px; line-height:8px; padding-bottom:7px;-webkit-text-size-adjust:none;}
+.question-list .describ{height:28px; font-size:14px; font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; color:#3c3c3c; width:596px; overflow:hidden;}
+.question-list li .li-r{ width:100px; float:right; width:100px; display:inline; margin-right:4px;}
+.question-list li .li-r a{float:left; display:inline;}
+.question-list li .li-r a:hover{alpha:filter(opacity=70); opacity:0.7; -moz-opacity:0.7;}
+.question-list li .li-r .icons{margin-top:8px; overflow:hidden; background:#eaeae5; border-radius:3px; height:30px;}
+.question-list .eyes{ background:url("../images/ask.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/ask.png*/ no-repeat; background-position:1px -252px; width:19px; height:16px; margin-top:7px; margin-left:12px;}
+.question-list .edit{ background:url("../images/ask.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/ask.png*/ no-repeat; background-position:1px -216px; width:19px; height:18px; margin-top:7px; margin-left:11px;}
+.question-list .line{float:left; display:inline; margin-left:5px; width:5px; border-left:1px solid #b4b4b0; height:14px; margin-top:9px;}
+.question-list .del{ background:url("../images/ask.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/ask.png*/ no-repeat; background-position:1px -175px; width:18px; height:18px; margin-top:7px; margin-left:5px;}
+.question-list li .li-r .nothandle{height:32px; line-height:32px; width:100px; text-align:center; color:#9e9e9e;}
+.question-list li .li-r .hashandle{height:32px; line-height:32px; width:100px; text-align:center; color:#1bbf00;}
+
+.asklist .article{ float:right; display:inline; width:208px;}
+.asklist .article h2{font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; color:#002a4a; font-weight:normal;height:56px; line-height:56px; border-bottom:1px solid #c2c2c2;}
+.asklist .article .schoolline dt{ padding-top:16px; color:#414141; font-size:14px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif;  padding-bottom:9px;}
+.asklist .article .schoolline dd{ line-height:24px; height:24px; margin-bottom:5px;/*padding-left:22px; background:url(../images/ask.png) no-repeat; background-position:0px -122px;*/}
+
+.asklist .pages{margin-top:18px; height:18px;}
+.asklist .pages a{ display:inline-block; height:16px; width:16px; border:1px solid #d1d1d1; text-align:center; margin-left:5px; color:#696969; line-height:16px;}
+.asklist .pages a.curse,.asklist .pages a.curse:hover{background:#00c0ff; color:#fff; font-weight:bold;}
+.asklist .pages a:hover{background:#E6F2FF;}
+.asklist .pages a.prev{background:url("../images/otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat; background-position:4px -133px; color:#fff; }
+.asklist .pages a.next{width:25px; background:url("../images/otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat; background-position:4px -183px;  color:#fff;}
+
+.bookwrap{width:100%; background:#f5f5f0;}
+.asklist .article .note{ margin-top:16px; line-height:18px;}
+.question-list li .li-r .handled{ height:32px; line-height:32px; color:#1bbf00}
+.question-list li .li-r .handled .handled-l{ width:46px;}
+.question-list li .li-r .handled .handled-r{ font-size:10px; width:50px; line-height:12px; padding-top:5px; font-weight:normal;-webkit-text-size-adjust:none; text-align:center}
+.bookwrap .question-list li.curse{background:#fffffb;}
+/*通知公告*/
+.notice-wrap{ height:92px;position: relative;}
+.notice-wrap .wrap-con{ height:92px;}
+
+.notice-clumn{ width:100%; height:72px; border-bottom:1px solid #d9d9d9; overflow:hidden;}
+.notice-clumn .p{height:16px; line-height:16px; padding-left:6px; display:block; margin-top:28px; color:#909090;}
+.notice-clumn .p a.index{padding-left:22px; background:url("../images/otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat 0px -1px;}
+.notice-clumn .p a{ color:#909090; margin:0px 7px;}
+.notice-clumn .p a:hover{color:#0093d0;}
+.notice-con{width:980px; margin:0px auto; padding-bottom:150px;}
+.notice-con .menu{margin:0px; padding:0px; margin-bottom:26px;}
+.notice-con .aside{float:left; display:inline; width:235px;}
+.notice-con .aside .hbg{ height:32px; background:url("../images/gonggao.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/gonggao.png*/ no-repeat;}
+.notice-con .aside .list{height:46px; line-height:46px; font-size:14px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; text-indent:10px; text-align:left; background:url("../images/otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat; background-position:206px -25px; border-bottom:1px solid #d9d9d9; color:#000; display:block;}
+.notice-con .aside .list.curse,.notice-con .aside .list.curse:hover{ color:#ff4800;}
+.notice-con .aside .list:hover{color:#0093d0;}
+.notice-con .bbg{ background:url("../images/gonggaobg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/gonggaobg.png*/ no-repeat 0px -8px; height:200px; width:235px; margin-top:0px;}
+.notice-con .article{width:700px; float:right; display:inline; overflow:hidden;}
+.notice-con .pub-time{ height:14px; line-height:14px; color:#a6a6a6; margin-top:50px;}
+.notice-con h1.tit{font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; font-size:22px; color:#282828; line-height:44px; padding-bottom:15px; border-bottom:1px solid #d1d1d1;}
+.notice-con .content{line-height:24px; color:#444444; font-size:14px; padding-top:7px;}
+.notice-con .content p{text-indent:28px; margin-top:23px;}
+
+
+/*通知公告list*/
+.notice-con h1.t{font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; font-size:22px; color:#282828; height:78px; line-height:78px;border-bottom:1px solid #d1d1d1;margin-bottom:10px;}
+.notice-con .notice-list{ padding:0px 15px 0px 11px;}
+.notice-con .notice-list li{height:40px;font-size:14px; line-height:40px; background:url("../images/otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat; background-position:0px -73px; padding-left:23px; border-bottom:1px dotted #d1d1d1;}
+.notice-con .notice-list li a{color:#5d5d5d; }
+.notice-con .notice-list li a:hover{color:#0093d0;}
+.notice-con .notice-list li p.des{float:left; width:550px; overflow:hidden;}
+.notice-con .notice-list  li .time{color:#a0a0a0; float:right; height:36px;}
+.notice-con .pages{margin-top:18px; height:18px;}
+.notice-con .pages a{ display:inline-block; height:16px; width:16px; border:1px solid #d1d1d1; text-align:center; margin-left:5px; color:#696969; line-height:16px;}
+.notice-con .pages a.curse,.notice-con .pages a.curse:hover{background:#00c0ff; color:#fff; font-weight:bold;}
+.notice-con .pages a:hover{background:#E6F2FF;}
+.notice-con .pages a.prev{background:url("../images/otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat; background-position:4px -133px; color:#fff; }
+.notice-con .pages a.next{width:25px; background:url("../images/otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat; background-position:4px -183px;  color:#fff;}
+
+/*测试*/
+.test-list{ border-bottom:1px dotted #d8d8d8;}
+.test-list .test-num{ height:84px; float:left; display:inline; width:60px; text-align:left; font-size:30px; line-height:84px; color:#cfcfcf; font-style:italic;font-weight:bold;}
+.test-list .test-con{ float:left; width:640px; display:inline; }
+.test-list .test-con .answer{ color:#0060aa; height:38px; line-height:38px; font-size:14px; padding-top:14px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; }
+.test-list .test-con .choose-list{line-height:16px; line-height:16px; width:640px;}
+.test-list .test-con .choose-list input{vertical-align:middle; margin-right:10px;}
+.test-list .test-con .choose-list  .choose-item{ margin-right:30px; color:#4a4a4a;}
+.test-advice{ height:62px; line-height:62px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; color:#616161; font-size:16px;}
+.test-area{width:684px; height:134px; padding:5px; line-height:18px; color:#333; font-size:14px; overflow-y:auto; border:1px solid #bababa; border-radius:5px; resize:none;}
+.test-buttons{padding-top:15px;}
+.test-buttons input{display:inline; text-align:center; color:#fff; font-weight:bold; height:30px; line-height:30px; display:block; border:none; border-radius:2px;}
+.test-buttons .reset{ width:88px; background:#f4a121; float:left; }
+.test-buttons .reset:hover{ background:#e6900b;}
+.test-buttons .tempsave,.test-buttons .submit{float:right; width:65px; display:inline; background:#2c3d4f; margin-right:5px;}
+.test-buttons .tempsave:hover,.test-buttons .submit:hover{ background:#1f3b59;}
+
+/*学生服务*/
+.stuservice-wrap{ width:750px; overflow:hidden;}
+.stuservice-wrap li{width:750px; padding-bottom:10px;}
+.stuservice-list li .stuservice-item{float:left; width:322px; padding-left:3px; margin-right:50px;}
+ .stuservice-list li h3{font-size:18px; color:#01599b; height:46px; line-height:46px; margin-top:16px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; border-bottom:1px solid #c2c2c2;}
+ .stuservice-list .list{ height:36px; line-height:36px; border-bottom:1px dotted #b6b6b6; font-size:14px; padding-left:20px; background:url("../images/otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat; background-position:0px -75px;}
+ 
+.quetions-form{ font-size:14px;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; }
+.quetions-form .p{height:32px; line-height:32px; padding:10px 0px;}
+.quetions-form .p label{float:left; display:inline; margin-left:4px; width:125px;}
+.quetions-form .p select{ width:190px; height:30px; line-height:30px; border:1px solid #d1d1d1; margin-right:18px; font-size:14px; padding:5px;}
+.quetions-form .p input{ width:395px; padding-left:5px; height:30px; line-height:30px; border:1px solid #d1d1d1; font-size:14px;}
+.quetions-detail{width:684px; height:134px; padding:5px; line-height:18px; color:#333; font-size:14px; overflow-y:auto; border:1px solid #bababa; border-radius:5px; resize:none;}
+.quetions-form .t{height:42px; line-height:42px;}
+.quetions-upload{ height:32px; padding:19px 0px; font-size:14px;}
+.quetions-upload .linetype{ margin-left:35px; height:30px; width:130px; padding-left:5px; line-height:30px; color:#333;}
+.quetions-upload .file{ margin-left:10px; height:30px; width:63px; line-height:30px; color:#333;}
+.quetions-upload .upload{width:63px; height:28px; border-radius:2px; font-weight:bold; margin-top:1px;margin-left:8px; color:#fff; background:#2c3d4f; border:none;}
+.quetions-upload .upload:hover{background:#182e45;}
+.submit-p{ padding-top:18px; border-top:1px solid #d1d1d1; height:30px;}
+.submit-p input{ width:63px; height:30px; font-weight:bold; color:#fff; text-align:center; border-radius:2px; border:none;}
+.submit-p .submitbutton{ background:#2c3d4f; margin-left:297px;}
+.submit-p .submitbutton:hover{ background:#182e45;}
+.submit-p .resetbutton{ background:#f4a121; margin-left:10px;}
+.submit-p .resetbutton:hover{background:#d98b13;}
+
+/*网站地图*/
+.map-t{font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; font-size:22px; color:#282828; height:78px; line-height:78px;border-bottom:1px solid #d1d1d1;}
+.map-stafflist{ padding-top:42px;}
+.map-stafflist dd{width:326px; float:left; border-right:1px dotted #d1d1d1;}
+.map-stafflist dd.dd-1{width:329px;}
+.map-stafflist dd.dd-2{width:335px;}
+.map-stafflist dd.dd-3{ width:314px; border-right:none;}
+.map-stafflist h3{font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; font-size:18px; color:#282828; height:24px; line-height:24px; color:#01599b; text-align:center; text-indent:-40px;}
+.map-stafflist .list{width:260px; overflow:hidden; margin:17px auto 0px auto;}
+.map-stafflist .list li{line-height:30px; line-height:30px; float:left; width:115px; padding-left:15px; background:url("otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat; background-position: 0px -78px;}
+
+.map-innercom{ font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; font-weight:normal; font-size:18px; color:#282828; height:74px; line-height:74px; color:#01599b; text-align:center; margin-top:58px; border-top:1px solid #d1d1d1;}
+.map-inner {margin-top:13px;}
+.map-inner li{ float:left; width:189px; border-right:1px dotted #d1d1d1; padding-left:55px;min-height:160px;}
+.map-inner li h2{height:38px; line-height:38px;font-weight:normal; font-size:16px; color:#282828;font-family:\5FAE\8F6F\96C5\9ED1,sans-serif; color:#262626;}
+.map-inner li .list{ padding-left:15px; background:url("../images/otherbg.png")/*tpa=http://its.tsinghua.edu.cn/yhfwpt/images/otherbg.png*/ no-repeat; background-position: 0px -78px; height:30px; line-height:30px;}
+.map-inner li .list a{ color:#353535;}
+.map-inner li .list a:hover{color:#0093d0;}

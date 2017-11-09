@@ -32,4 +32,5 @@ public class Test implements BeanNameAware, InitializingBean ,BeanFactoryAware {
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         log.info(beanFactory);
     }
+
 }

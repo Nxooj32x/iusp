@@ -9,6 +9,8 @@
     <security:http pattern="/dwr/**" security="none"/>
     <security:http pattern="/RES/**" security="none"/>
     <security:http pattern="/css/**" security="none"/>
+    <security:http pattern="/errorPage/**" security="none"/>
+
     <security:http pattern="/img/**" security="none"/>
     <security:http pattern="/static/**" security="none"/>
     <security:http pattern="/innerHtml/**" security="none"/>
@@ -23,86 +25,49 @@
         <security:custom-filter ref="clientFilter" after="SECURITY_CONTEXT_FILTER"/>
         <security:access-denied-handler ref="accessDeniedHandler"/>
         <security:intercept-url pattern="/" access="permitAll"/>
-        <security:intercept-url pattern="/auth/login" access="permitAll"/>
         <security:intercept-url pattern="/main/common" access="hasRole('ROLE_USER')" method="GET"/>
         <security:intercept-url pattern="/main/admin" access="hasRole('ROLE_ADMIN')" method="GET"/>
 
         <security:intercept-url pattern="/**" access="authenticated"/>
-
-
-        <security:logout invalidate-session="true" logout-url="/auth/logout" logout-success-url="/auth/login"/>
+        <security:logout invalidate-session="true" logout-url="/auth/logout" logout-success-url="/"/>
         <security:csrf disabled="true"/>
-
-       <!-- <security:session-management session-authentication-error-url="/">
-            <security:concurrency-control max-sessions="1" error-if-maximum-exceeded="false"
-                                          expired-url="/" session-registry-ref="sessionRegistry"/>
-        </security:session-management>
-
-        <security:expression-handler ref="webexpressionHandler" ></security:expression-handler>-->
 
     </security:http>
 
-    <bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />
+    <bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
 
-    <bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+    <bean id="webexpressionHandler"
+          class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
 
     <bean id="accessDeniedHandler" class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
         <property name="errorPage" value="/auth/denied"/>
     </bean>
 
-<!--    <bean id="authenticationProcessingFilterEntryPoint"
-          class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
-        <constructor-arg name="loginFormUrl" value="/auth/login"/>
+    <bean id="authenticationProcessingFilterEntryPoint"
+          class="org.iusp.common.auth.entrypoint.IuspLoginUrlAuthenticationEntryPoint">
+        <constructor-arg name="loginFormUrl" value="/"/>
     </bean>
 
-
-    <bean id="successHandler" class="org.iusp.common.auth.IuspSavedRequestAwareAuthenticationSuccessHandler">
-        <property name="defaultTargetUrl" value="/main/common"/>
+    <!-- 页面跳转 -->
+     <bean id="authenticationSuccessHandler"
+          class="org.iusp.common.auth.handler.ReturnJsonAuthenticationSuccessHandler">
     </bean>
 
-    <bean id="failureHandler" class="org.iusp.common.auth.IuspSimpleUrlAuthenticationFailureHandler">
-        <property name="defaultFailureUrl" value="/auth/login?error=true"/>
+    <!-- 对验证失败ajax返回相应信息 -->
+    <bean id="authenticationFailureHandler"
+          class="org.iusp.common.auth.handler.ReturnJsonAuthenticationFailureHandler">
     </bean>
 
-    <bean id="clientFilter" class="org.iusp.common.filter.IuspUsernamePasswordAuthenticationFilter">
+    <bean id="clientFilter" class="org.iusp.common.auth.filter.ClientFilterFilter">
         <property name="authenticationManager" ref="authenticationManager"/>
-        <property name="authenticationFailureHandler" ref="failureHandler"/>
-        <property name="authenticationSuccessHandler" ref="successHandler"/>
+        <property name="authenticationFailureHandler" ref="authenticationFailureHandler"/>
+        <property name="authenticationSuccessHandler" ref="authenticationSuccessHandler"/>
     </bean>
-
-    <bean id="encoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
 
     <security:authentication-manager alias="authenticationManager">
-        <security:authentication-provider user-service-ref="userLoginService">
-            <security:password-encoder ref="encoder">
-            </security:password-encoder>
-        </security:authentication-provider>
+        <security:authentication-provider ref="userAuthenticationProvider"/>
     </security:authentication-manager>
 
-    <bean id="userLoginService" class="org.iusp.common.auth.UserLoginServiceImpl"/>-->
-
-      <bean id="authenticationProcessingFilterEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
-                <constructor-arg name="loginFormUrl" value="/auth/login" />
-            </bean>
-
-            <bean id ="authenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
-                <property name="defaultFailureUrl" value="/auth/login?error=true"/>
-            </bean>
-            <bean id ="authenticationSuccessHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
-                <property name="defaultTargetUrl" value="/main/common" />
-            </bean>
-
-            <bean id="clientFilter" class="org.iusp.common.filter.ClientFilterFilter">
-                <property name="authenticationManager" ref="authenticationManager"/>
-                <property name="authenticationFailureHandler" ref="authenticationFailureHandler"/>
-                <property name="authenticationSuccessHandler" ref="authenticationSuccessHandler"/>
-            </bean>
-
-            <security:authentication-manager alias="authenticationManager">
-                <security:authentication-provider ref="userAuthenticationProvider"/>
-            </security:authentication-manager>
-
-            <bean id="userAuthenticationProvider" class="org.iusp.common.auth.UserAuthenticationProvider"></bean>
-
-
+    <bean id="userAuthenticationProvider" class="org.iusp.common.auth.UserAuthenticationProvider"></bean>
+    <bean id="customFilterChain" class="org.iusp.common.filter.CustomFilterChain"/>
 </beans>

@@ -1,0 +1,36 @@
+
+/*pages*/
+.snPages{float:right;display:inline;margin:15px -7px 20px 0;font-size:0px;padding-right:2px}
+.snPages a,.snPages a:visited,.snPages span,.snPages div{position:relative;display:inline;float:left;margin-right:4px;color:#333;font-size:12px;}
+.snPages span{font-size:12px;}
+.snPages div{line-height:24px;padding-left:30px;overflow:hidden;}
+.snPages a,.snPages a:visited{height:24px;line-height:24px;padding:0 8px;text-align:center;background:#fff;border:1px solid #d7d7d7;border-radius:4px 4px 4px 4px;}
+.snPages a.current{color:#f60;display:inline-block;width:20px;height:24px;line-height:24px;line-height:28px\9;_line-height:24px;padding:0;overflow:hidden;}
+.snPages a.other{display:inline-block;width:20px;height:24px;line-height:24px;line-height:28px\9;_line-height:24px;padding:0;overflow:hidden;}
+.snPages a.current:visited{_color:#f60;}
+.snPages a.prev,.snPages a.next,.snPages a.prev,.snPages a.next:visited{display:inline-block;width:68px;height:24px;line-height:24px;line-height:28px\9;_line-height:24px;padding:0;overflow:hidden;}
+.snPages a.prev,.snPages span.prev{text-indent:6px;cursor: pointer}
+.snPages a.next,.snPages span.next{text-indent:-6px;cursor: pointer}
+.snPages span.prev,.snPages span.next{margin-right:5px;display:inline;float:left;width:68px;height:24px;line-height:24px;line-height:28px\9;_line-height:24px;color:#b1b1b1;text-align:center;background:#fff;border:1px solid #d7d7d7;border-radius:4px 4px 4px 4px;}
+.snPages span.prev{}
+.snPages span.next{}
+.snPages b{position:absolute;width:0;height:0;line-height:0;margin-top:-2px;+margin-top:-3px;font-size:0;border-width:5px;border-style:solid;border-color:#fff #333 #fff #fff;}
+.snPages a.prev b{left:1px;top:10px;}
+.snPages a.next b{right:1px;top:10px;border-color:#fff #fff #fff #333;}
+.snPages span.prev b{left:1px;top:10px;border-color:#fff #b1b1b1 #fff #fff;}
+.snPages span.next b{right:1px;top:10px;border-color:#fff #fff #fff #b1b1b1;}
+.snPages div input{width:32px;height:24px;line-height:24px;margin:0 3px;text-align:center;+vertical-align:middle;border:1px solid #d7d7d7;}
+.snPages div input.pagesubmit{cursor:pointer;width:45px;height:26px;line-height:26px;_line-height:20px;background:#fff;border-radius:4px 4px 4px 4px;}
+.snPages div input.pagesubmit:hover{color:#F60;}
+.snPages a:hover{color:#f60;}
+.changePage .snPages li{float:left;}
+
+/* end general search */
+
+
+
+.grid{
+	width:100%;
+	margin:5px auto;
+	min-height:100px
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="software">
+	<!-- auto generate default resultMap  jdbcType="CLOB" javaType="java.lang.String" typeHandler="com.hns.iusp.utils.OracleClobTypeHandler" -->
+	<resultMap id="softwareMap" type="org.iusp.common.bean.Software">
+		<id column="ID" property="id" />
+		<result column="XSMC" property="downName" />
+		<result column="MSXX" property="descinfo" />
+		<result column="XZDZ" property="downaddr"/>
+		<result column="SCZ" property="uploader" />
+		<result column="SCSJ" property="createTime"/>
+	</resultMap>
+
+	<select id="querySoftwareByLimit"
+			parameterType="java.util.Map" resultMap="softwareMap">
+		SELECT * FROM iusp_common_download_software ORDER BY SCSJ DESC
+	</select>
+
+	<select id="querySoftwareForPage"
+			parameterType="java.util.Map" resultMap="softwareMap">
+		SELECT * FROM IUSP_COMMON_DOWNLOAD_SOFTWARE WHERE 1=1
+		<if test="downName!=null and downNname!=''">
+			AND XSMC like '%'||#{downName}||'%'
+		</if>
+		<if test="uploader!=null and uploader!=''">
+			AND SCZ = #{uploader}
+		</if>
+	</select>
+
+	<insert id="addSoftware" parameterType="org.iusp.common.bean.Software">
+		insert into IUSP_COMMON_DOWNLOAD_SOFTWARE(XSMC,MSXX,XZDZ,SCZ,SCSJ) values(#{downName},#{descinfo},#{downaddr},#{uploader},#{createTime})
+	</insert>
+
+	<delete id="deleteSoftwareById" parameterType="org.iusp.common.bean.Software">
+		DELETE FROM IUSP_COMMON_DOWNLOAD_SOFTWARE where ID = #{id}
+	</delete>
+
+</mapper>

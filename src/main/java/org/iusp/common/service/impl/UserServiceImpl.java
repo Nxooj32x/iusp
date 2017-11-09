@@ -10,7 +10,10 @@
  */
 package org.iusp.common.service.impl;
 
+import org.iusp.common.bean.LoginUser;
+import org.iusp.common.bean.SessionUser;
 import org.iusp.common.bean.User;
+import org.iusp.common.constant.Constant;
 import org.iusp.common.dao.UserDao;
 import org.iusp.common.service.UserService;
 import org.iusp.utils.QueryResult;
@@ -56,6 +59,47 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> selectAll() {
         return userDao.selectAll() ;
+    }
+
+    @Override
+    public LoginUser findLoginUserByUserName(String userName) {
+        return userDao.findLoginUserByUserName(userName);
+    }
+
+    @Override
+    public int addLoginUser(LoginUser loginUser) {
+        LoginUser tmpUser = userDao.findLoginUserByUserName(loginUser.getUserName());
+
+        int result = 0;
+        if (tmpUser == null) {
+            result = userDao.addLoginUser(loginUser);
+        }
+        return result;
+    }
+
+    @Override
+    public int deleteLoginUserByUserName(String userName) {
+        return userDao.deleteLoginUserByUserName(userName);
+    }
+
+    @Override
+    public int findLoginUserCountByOrgCode(String dept, List<String> depts) {
+        return userDao.findLoginUserCountByOrgCode(dept, depts);
+    }
+
+    @Override
+    public SessionUser findSessionUserByUserName(String userName, String roleCode) {
+        SessionUser user = null;
+        if (Constant.Role.ROLECODE_STUDENT.equals(roleCode)) {
+            user = userDao.findStudentInfoByUserName(userName);
+        } else if (Constant.Role.ROLECODE_TEACHER.equals(roleCode) || Constant.Role.ROLECODE_WUGUAN.equals(roleCode)) {
+            user = userDao.findTeacherInfoByUserName(userName);
+        } else {
+            user = new SessionUser();
+            user.setUserName(userName);
+            user.setRoleCode(roleCode);
+        }
+        return user;
     }
 
 }

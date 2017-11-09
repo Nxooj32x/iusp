@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="schollTerm">
+	<!-- auto generate default resultMap  jdbcType="CLOB" javaType="java.lang.String" typeHandler="com.hns.iusp.utils.OracleClobTypeHandler" -->
+	<resultMap id="schollTermMap" type="org.iusp.admin.bean.SchoolTermBean">
+		<id column="ID" property="id" />
+		<result column="xn" property="schoolYear"  />
+		<result column="djxq" property="schoolTerm" />
+		<result column="kxsj" property="schoolOpeanDate"/>
+		<result column="fjsj" property="schoolCloseDate"/>
+	</resultMap>
+
+	<select id="queryForPage"
+			parameterType="java.util.Map" resultMap="schollTermMap">
+		SELECT * FROM iusp_common_term_table WHERE 1=1 ORDER BY XN
+		<if test="schoolYear!=null and schoolYear!=''">
+			AND TO_CHAR(XN,'YYYY')=TO_CHAR(#{schoolYear},'YYYY')
+		</if>
+	</select>
+</mapper>

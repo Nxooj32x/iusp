@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="workingLog">
+	<!-- auto generate default resultMap -->
+	<resultMap id="workingLogMap"
+		type="org.iusp.common.bean.WorkingLog">
+		<id column="ID" property="id" />
+		<result column="RZZT" property="logStatus" />
+		<result column="RZLX" property="logType" />
+		<result column="CGZNR" property="nowWorkInfo" />
+		<result column="NGZJH" property="nextWorkInfo" />
+		<result column="WTHJY" property="question" />
+		<result column="TXRZGH" property="staffNo" />
+		<result column="TXRXM" property="staffName" />
+		<result column="RZSJ" property="logTime" />
+
+		<result column="NF" property="year" />
+		<result column="XQ" property="term" />
+		<result column="DJZ" property="week" />
+
+		<result column="TXSJ" property="fillTime" />
+		<result column="SPRZGH" property="approver" />
+		<result column="SPRXM" property="approverName" />
+		<result column="SPSJ" property="approveTime" />
+		<!--<result column="SPZT" property="createTime" />-->
+		<result column="PY" property="comment" />
+		<result column="PF" property="score" />
+		<result column="THYY" property="returnReason" />
+		<result column="autoCheckflg" property="autoCheckflg" />
+		<result column="CFSJ" property="autoCheckCnt" />
+	</resultMap>
+
+	<select id="findWorkingLogById" parameterType="java.util.Map"
+			resultMap="workingLogMap">
+		SELECT * FROM IUSP_WORKING_LOG WHERE ID = #{id}
+	</select>
+
+	<select id="findMyWorkingLogCount" parameterType="java.util.Map"
+			resultType="int">
+		SELECT count(ID) FROM IUSP_WORKING_LOG WHERE 1=1
+		<if test="logType!=null and logType!=''">
+			AND RZLX = #{logType}
+		</if>
+		<if test="week!=null and week!=''">
+			AND DJZ = #{week}
+		</if>
+		<if test="logStatus!=null and logStatus!=''">
+			AND RZZT = #{logStatus}
+		</if>
+		<if test="userName!=null and userName!=''">
+			AND TXRZGH = #{userName}
+		</if>
+		<!-- 日志时间 日报 -->
+		<if test="logTimeBegin!=null and logTimeBegin!=''">
+			AND RZSJ >= #{logTimeBegin}
+		</if>
+		<if test="logTimeBegin!=null and logTimeBegin!=''">
+			AND RZSJ &lt;= #{logTimeEnd}
+		</if>
+		<!-- 日志提交时间 -->
+		<if test="fillTimeBegin!=null and fillTimeBegin!=''">
+			AND TXSJ >= TO_DATE(#{fillTimeBegin},'YYYY-MM-DD')
+		</if>
+		<if test="fillTimeEnd!=null and fillTimeEnd!=''">
+			AND TXSJ &lt;= TO_DATE(#{fillTimeEnd},'YYYY-MM-DD')
+		</if>
+		<!-- 评审人 -->
+		<if test="approverName!=null and approverName!=''">
+			AND SPRXM like '%'||#{approverName}||'%'
+		</if>
+		<!-- 关键词 -->
+		<if test="keyWords!=null and keyWords!=''">
+			AND (CGZNR like '%'||#{keyWords}||'%' OR NGZJH like
+			'%'||#{keyWords}||'%' OR WTHJY like '%'||#{keyWords}||'%')
+		</if>
+		<if test="score!=null and score!=''">AND PF = #{score}</if>
+	</select>
+
+	<select id="findWorkingLogCount" parameterType="java.util.Map"
+			resultType="int">
+		SELECT count(a.ID) FROM IUSP_WORKING_LOG a LEFT JOIN
+		IUSP_COMMON_TEACHER_ORG b ON a.TXRZGH = b.ZGH WHERE 1=1
+
+		<if test="deptsIsNull != null and deptsIsNull == 'N'.toString()">
+			AND b.ZZBM IN
+			<foreach item="item" index="index" collection="depts" open="("
+					 separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="logType!=null and logType!=''">
+			AND a.RZLX = #{logType}
+		</if>
+		<if test="week!=null and week!=''">
+			AND a.DJZ = #{week}
+		</if>
+		<if test="logStatus!=null and logStatus!=''">
+			AND a.RZZT = #{logStatus}
+		</if>
+		<if test="logStatus==null or logStatus==''">
+			AND a.RZZT != '00'
+		</if>
+		<if test="staffNo!=null and staffNo!=''">
+			AND a.TXRZGH = #{staffNo}
+		</if>
+		<if test="staffName!=null and staffName!=''">
+			AND a.TXRXM like '%'||#{staffName}||'%'
+		</if>
+		<if test="keyWords!=null and keyWords!=''">
+			AND (a.CGZNR like '%'||#{keyWords}||'%' OR a.NGZJH like
+			'%'||#{keyWords}||'%' OR a.WTHJY like '%'||#{keyWords}||'%')
+		</if>
+		<if test="approver!=null and approver!=''">
+			AND a.SPRZGH = #{approver}
+		</if>
+		<if test="score!=null and score!=''">AND a.PF = #{score}</if>
+		<!-- 日志时间 -->
+		<if test="logTimeBegin!=null and logTimeBegin!=''">
+			AND a.RZSJ >=#{logTimeBegin}
+		</if>
+		<if test="logTimeEnd!=null and logTimeEnd!=''">
+			AND a.RZSJ &lt;= #{logTimeEnd}
+		</if>
+		<!-- 日志提交时间 -->
+		<if test="fillTimeBegin!=null and fillTimeBegin!=''">
+			AND a.TXSJ >= TO_DATE(#{fillTimeBegin},'YYYY-MM-DD')
+		</if>
+		<if test="fillTimeEnd!=null and fillTimeEnd!=''">
+			AND a.TXSJ &lt;= TO_DATE(#{fillTimeEnd},'YYYY-MM-DD')
+		</if>
+		<!-- 评审人 -->
+		<if test="approverName!=null and approverName!=''">
+			AND a.SPRXM like '%'||#{approverName}||'%'
+		</if>
+
+
+		AND a.TXRZGH NOT IN ( SELECT ZGH FROM IUSP_COMMON_TEACHER_ORG
+		WHERE ZZBM = #{currDept} AND GWBM = '004' )
+	</select>
+
+	<select id="findWorkingLog1Count" parameterType="java.util.Map"
+			resultType="int">
+		SELECT count(a.ID) FROM IUSP_WORKING_LOG a WHERE 1=1
+		<if test="logType!=null and logType!=''">
+			AND a.RZLX = #{logType}
+		</if>
+		<if test="logStatus!=null and logStatus!=''">
+			AND a.RZZT = #{logStatus}
+		</if>
+		<if test="logStatus==null or logStatus==''">
+			AND a.RZZT != '00'
+		</if>
+		<if test="staffNo!=null and staffNo!=''">
+			AND a.TXRZGH = #{staffNo}
+		</if>
+		<if test="staffName!=null and staffName!=''">
+			AND a.TXRXM like '%'||#{staffName}||'%'
+		</if>
+		<if test="keyWords!=null and keyWords!=''">
+			AND (a.CGZNR like '%'||#{keyWords}||'%' OR a.NGZJH like
+			'%'||#{keyWords}||'%' OR a.WTHJY like '%'||#{keyWords}||'%')
+		</if>
+		<if test="score!=null and score!=''">AND a.PF = #{score}</if>
+		<!-- 日志时间 -->
+		<if test="logTimeBegin!=null and logTimeBegin!=''">
+			AND RZSJ >=#{logTimeBegin}
+		</if>
+		<if test="logTimeEnd!=null and logTimeEnd!=''">
+			AND RZSJ &lt;= #{logTimeEnd}
+		</if>
+		<!-- 日志提交时间 -->
+		<if test="fillTimeBegin!=null and fillTimeBegin!=''">
+			AND TXSJ >= TO_DATE(#{fillTimeBegin},'YYYY-MM-DD')
+		</if>
+		<if test="fillTimeEnd!=null and fillTimeEnd!=''">
+			AND TXSJ &lt;= TO_DATE(#{fillTimeEnd},'YYYY-MM-DD')
+		</if>
+		<if test="approver!=null and approver!=''">
+			AND SPRZGH = #{approver}
+		</if>
+		<!-- 评审人 -->
+		<if test="approverName!=null and approverName!=''">
+			AND SPRXM like '%'||#{approverName}||'%'
+		</if>
+
+	</select>
+
+</mapper>

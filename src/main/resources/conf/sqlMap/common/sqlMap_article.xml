@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="article">
+	<!-- auto generate default resultMap  jdbcType="CLOB" javaType="java.lang.String" typeHandler="com.hns.iusp.utils.OracleClobTypeHandler" -->
+	<resultMap id="articleMap" type="org.iusp.common.bean.Article">
+		<id column="ID" property="id" />
+		<result column="BT" property="title" />
+		<result column="ZY" property="summary" />
+		<result column="NR" property="content" javaType="byte[]" jdbcType="BLOB" typeHandler="org.apache.ibatis.type.BlobTypeHandler" />
+		<result column="CJR" property="author" />
+		<result column="LX" property="type" />
+		<result column="CJSJ" property="createTime" />
+	</resultMap>
+
+	<select id="queryArticleByLimit"
+			parameterType="java.util.Map" resultMap="articleMap">
+		SELECT * FROM iusp_common_article_info where 1=1 and LX = #{type} ORDER BY CJSJ DESC
+	</select>
+
+	<select id="findArticleById"
+			parameterType="java.lang.Integer" resultMap="articleMap">
+		SELECT * FROM iusp_common_article_info WHERE ID = #{id}
+	</select>
+
+	<select id="queryArticleForPage"
+			parameterType="java.util.Map" resultMap="articleMap">
+		SELECT * FROM iusp_common_article_info WHERE 1=1
+		<if test="title!=null and title!=''">
+			AND BT like '%'||#{title}||'%'
+		</if>
+		<if test="type!=null and type!=''">
+			AND LX = #{type}
+		</if>
+		<if test="author!=null and author!=''">
+			AND CJR = #{author}
+		</if>
+	</select>
+
+	<insert id="addArticle" parameterType="org.iusp.common.bean.Article">
+		insert into IUSP_COMMON_ARTICLE_INFO(BT,ZY,NR,CJR,LX,CJSJ) values(#{title},#{summary},#{content,javaType=byte[],jdbcType=BLOB,typeHandler=org.apache.ibatis.type.BlobTypeHandler},#{author},#{type,jdbcType=VARCHAR},#{createTime})
+	</insert>
+
+	<insert id="updateArticle" parameterType="org.iusp.common.bean.Article">
+		update IUSP_COMMON_ARTICLE_INFO set BT=#{title},ZY=#{summary},NR=#{content,jdbcType=CLOB},CJR=#{author} WHERE ID=#{id}
+	</insert>
+
+	<delete id="deleteArticleById" parameterType="org.iusp.common.bean.Article">
+		DELETE FROM IUSP_COMMON_ARTICLE_INFO where ID = #{id}
+	</delete>
+</mapper>

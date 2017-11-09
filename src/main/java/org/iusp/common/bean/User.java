@@ -35,7 +35,28 @@ public class User implements Serializable{
 	/**用户ID*/
 	private int id;
 	/**登陆名*/
-	private String name;
+	private String realName;
+
+	private String userName;
+
+	private String roleCode;
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getRoleCode() {
+		return roleCode;
+	}
+
+	public void setRoleCode(String roleCode) {
+		this.roleCode = roleCode;
+	}
+
 	/**密码*/
 	private String password;
 	/**邮箱*/
@@ -90,11 +111,11 @@ public class User implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getRealName() {
+		return realName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setRealName(String realName) {
+		this.realName = realName;
 	}
 	public String getPassword() {
 		return password;
@@ -180,11 +201,5 @@ public class User implements Serializable{
 	}
 	public void setEmailState(String emailState) {
 		this.emailState = emailState;
-	}
-	
-	@Override
-	public String toString() {
-		return "User [name=" + name + ", email=" + email + ", status=" + status
-				+ ", type=" + type + "]";
 	}
 }

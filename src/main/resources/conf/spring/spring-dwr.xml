@@ -31,7 +31,7 @@
         <property name="mappings">
             <props>
                 <prop key="/dwr/**/*">dwrController</prop>
-                <prop key="/rm/**/*">iadminController</prop>
+                <!--<prop key="/rm/**/*">iadminController</prop>-->
             </props>
         </property>
     </bean>
@@ -54,10 +54,10 @@
     </dwr:controller>
     <dwr:annotation-config/>
 
-    <admin:controller id="iadminController" name="iadminController">
+<!--    <admin:controller id="iadminController" name="iadminController">
         <admin:config-param name="allowScriptTagRemoting"
                             value="true"/>
-    </admin:controller>
+    </admin:controller>-->
 
     <dwr:annotation-scan scanRemoteProxy="true"
                          scanDataTransferObject="true" base-package="org.iusp.dwr"/>

@@ -31,7 +31,7 @@ public class LoginLogoutController {
         } else {  
             model.put("error", "");  
         }  
-        return "loginpage";  
+        return "index";
   
     }  
   

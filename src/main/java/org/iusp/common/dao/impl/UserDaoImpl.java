@@ -16,6 +16,9 @@ import java.util.Map;
 
 import com.github.pagehelper.PageHelper;
 import org.iusp.base.BaseDao;
+import org.iusp.common.bean.LoginUser;
+import org.iusp.common.bean.SessionUser;
+import org.iusp.common.bean.Teacher;
 import org.iusp.common.bean.User;
 import org.iusp.common.dao.UserDao;
 import org.iusp.utils.QueryResult;
@@ -69,7 +72,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public User findUserByUserName(String userName) {
         User user = new User();
-        user.setName(userName);
+        user.setUserName(userName);
         return this.getSqlSession().selectOne("user.findUserByUserName", user);
     }
 
@@ -78,5 +81,56 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         Map paramMap = new HashMap();
         paramMap.put("username", "wangtao");
         return this.getSqlSession().selectList("user.selectAll",paramMap);
+    }
+
+    @Override
+    public LoginUser findLoginUserByUserName(String userName) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("userName", userName);
+        return this.getSqlSession().selectOne("user.findLoginUserByUserName", paramMap);
+    }
+
+    @Override
+    public int addLoginUser(LoginUser loginUser) {
+        return this.getSqlSession().insert("user.addLoginUser", loginUser);
+    }
+
+    @Override
+    public int deleteLoginUserByUserName(String userName) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("userName", userName);
+        return this.getSqlSession().delete("user.deleteLoginUserByUserName", paramMap);
+    }
+
+    @Override
+    public int findLoginUserCountByOrgCode(String dept, List<String> depts) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        if(depts != null && depts.size() == 0){
+            depts.add("-1");
+        }
+        paramMap.put("dept", dept);
+        paramMap.put("depts", depts);
+        return this.getSqlSession().selectOne("user.findLoginUserCountByOrgCode", paramMap);
+    }
+
+    @Override
+    public SessionUser findStudentInfoByUserName(String userName) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("userName", userName);
+        return this.getSqlSession().selectOne("user.findStudentInfoByUserName", paramMap);
+    }
+
+    @Override
+    public SessionUser findTeacherInfoByUserName(String userName) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("userName", userName);
+        return this.getSqlSession().selectOne("user.findTeacherInfoByUserName", paramMap);
+    }
+
+    @Override
+    public List<Teacher> findTeachersByOrgCode(String orgCode) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("orgCode", orgCode);
+        return this.getSqlSession().selectList("user.findTeacherInfoByOrgCode", paramMap);
     }
 }

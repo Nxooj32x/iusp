@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/main")
@@ -17,7 +18,7 @@ public class MainController {
      * @return 
      */  
     @RequestMapping(value = "/common", method = RequestMethod.GET)
-    public String getCommonPage() {  
+    public String getCommonPage() {
         logger.debug("Received request to show common page");  
         return "commonpage";  
     }  
@@ -30,7 +31,7 @@ public class MainController {
     @RequestMapping(value = "/admin", method = RequestMethod.GET)  
     public String getAadminPage() {  
         logger.debug("Received request to show admin page");  
-        return "adminpage";  
+        return "adminpage";
   
     }  
   

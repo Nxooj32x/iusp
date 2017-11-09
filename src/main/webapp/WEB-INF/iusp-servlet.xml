@@ -8,7 +8,12 @@
    	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 注册相关后置处理器,扫描包路径下的注解配置 -->
 
+    <context:component-scan base-package="org.iusp.admin.controller" />
+    <context:component-scan base-package="org.iusp.admin.service" />
+    <context:component-scan base-package="org.iusp.admin.dao" />
+
     <context:component-scan base-package="org.iusp.base.controller" />
+
     <context:component-scan base-package="org.iusp.base.service" />
     <context:component-scan base-package="org.iusp.common.controller" />
     <context:component-scan base-package="org.iusp.common.service" />
@@ -17,6 +22,10 @@
     <mvc:annotation-driven/>
 
     <mvc:resources mapping="/RES/**" location="/RES/"/>
+    <mvc:resources mapping="/upload/**" location="/upload/"/>
+
+    <mvc:resources mapping="/errorPage/**" location="/errorPage/"/>
+
     <mvc:resources mapping="/css/**" location="classpath:/css/"/>
     <mvc:resources mapping="/innerHtml/**" location="classpath:/innerHtml/"/>
     <mvc:resources mapping="/img/**" location="classpath:/img/"/>
@@ -115,7 +124,7 @@
         <!--        <property name="viewNames">
                     <value>*.html</value>
                 </property>-->
-        <property name="suffix" value=".html"/>
+        <property name="suffix" value=".ftl"/>
         <property name="requestContextAttribute" value="request"/>
         <property name="exposeSpringMacroHelpers" value="true"/>
         <property name="exposeRequestAttributes" value="true"/>

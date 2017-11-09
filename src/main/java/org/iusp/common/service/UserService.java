@@ -1,6 +1,8 @@
 package org.iusp.common.service;
 
 
+import org.iusp.common.bean.LoginUser;
+import org.iusp.common.bean.SessionUser;
 import org.iusp.common.bean.User;
 import org.iusp.utils.QueryResult;
 
@@ -25,4 +27,13 @@ public interface UserService {
 
     public List<User> selectAll();
 
+    LoginUser findLoginUserByUserName(String userName);
+
+    int addLoginUser(LoginUser loginUser);
+
+    int deleteLoginUserByUserName(String userName);
+
+    int findLoginUserCountByOrgCode(String dept,List<String> depts);
+
+    public SessionUser findSessionUserByUserName(String userName, String roleCode);
 }

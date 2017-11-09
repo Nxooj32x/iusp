@@ -1,5 +1,7 @@
 package org.iusp.common.auth;
 
+import org.iusp.common.bean.SessionUser;
+import org.iusp.common.bean.User;
 import org.iusp.common.service.UserService;
 import org.iusp.utils.StringUtil;
 import org.slf4j.Logger;
@@ -14,34 +16,35 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.*;
 
-/**
- * Created by tao on 2017/9/11.
- */
 public class UserAuthenticationProvider implements AuthenticationProvider  {
     private static Logger logger = LoggerFactory.getLogger(UserAuthenticationProvider.class);
 
     @Autowired
     private UserService userService;
+
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         UsernamePasswordAuthenticationToken token = (UsernamePasswordAuthenticationToken)authentication;
-        User user = new User();
+        SessionUser sessionUser = new SessionUser();
         if(token.getPrincipal()!=null && token.getCredentials()!=null){
 
-            org.iusp.common.bean.User userByUserName = userService.findUserByUserName(token.getPrincipal().toString());
+            User userByUserName = userService.findUserByUserName(token.getPrincipal().toString());
             if(userByUserName != null){
-                if(userByUserName.getPassword().equals( StringUtil.md5(token.getCredentials().toString()))){
-                    user.setName(token.getPrincipal().toString());
-                    user.setPwd(token.getCredentials().toString());
-                    user.setAuthenticated(true);
+                if(userByUserName.getPassword() != null && userByUserName.getPassword().equals( StringUtil.md5(token.getCredentials().toString()))){
+                    sessionUser.setUserName(token.getPrincipal().toString());
+                    sessionUser.setName(token.getPrincipal().toString());
+                    sessionUser.setPwd(token.getCredentials().toString());
+                    sessionUser.setRoleCode(userByUserName.getRoleCode());
+                    sessionUser.setRealName(userByUserName.getRealName());
+                    sessionUser.setAuthenticated(true);
                     Set<GrantedAuthority> authorities = getAuthorities(userByUserName.getStatus());
-                    user.setAccesses(authorities);
-                    return user;
+                    sessionUser.setAccesses(authorities);
+                    return sessionUser;
                 }else {
-                   throw new BadCredentialsException("证书错误");
+                   throw new BadCredentialsException("密码错误");
                 }
             }else{
-                throw new UsernameNotFoundException("用户未找到");
+                throw new UsernameNotFoundException("用户不存在");
             }
         }
         throw new AuthenticationServiceException("登录失败");
