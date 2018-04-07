@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="user">
+<mapper namespace="org.iusp.common.dao.UserDao">
     <resultMap id="userMap" type="org.iusp.common.bean.User">
         <id column="id" property="id"/>
         <result column="realName" property="realName"/>
@@ -22,114 +22,6 @@
         <result column="phoneState" property="phoneState"/>
         <result column="emailState" property="emailState"/>
     </resultMap>
-
-    <resultMap id="loginUserMap" type="org.iusp.common.bean.LoginUser">
-        <id column="ID" property="id"/>
-        <result column="DLM" property="userName" />
-        <result column="XM" property="realName" />
-        <result column="BMBM" property="orgCode" />
-    </resultMap>
-
-    <resultMap id="sessionUserMap" type="org.iusp.common.bean.SessionUser">
-        <id column="ID" property="id"/>
-        <result column="ZGH" property="userName" />
-        <result column="XM" property="realName" />
-        <result column="GWBM" property="positionCode" />
-        <result column="GWMC" property="positionName" />
-        <result column="SFFZR" property="isManager" />
-        <result column="BMBM" property="orgCode" />
-        <result column="BMMC" property="orgName" />
-        <result column="ZZLX" property="orgType" />
-    </resultMap>
-
-    <resultMap id="teacherMap" type="org.iusp.common.bean.Teacher">
-        <id column="ID" property="id"/>
-        <result column="ZGH" property="userName" />
-        <result column="XM" property="realName" />
-        <result column="BGHM" property="officePhone" />
-        <result column="LXDH" property="telephone" />
-        <result column="DZXX" property="email" />
-    </resultMap>
-
-    <select id="selectAll" resultMap="userMap" parameterType="java.util.Map">
-        select
-        *
-        from IUSP_COMMON_USER where 1=1
-    </select>
-
-    <select id="findUserById" parameterType="org.iusp.common.bean.User"
-            resultMap="userMap">
-        SELECT
-        *
-        FROM
-        IUSP_COMMON_USER
-        WHERE
-        id = #{id}
-    </select>
-
-    <select id="findLoginUserByUserName" parameterType="java.util.Map"
-            resultMap="loginUserMap">
-        SELECT * FROM
-        IUSP_COMMON_LOGIN_USER
-        WHERE
-        DLM = #{userName}
-    </select>
-
-    <select id="findLoginUserCountByOrgCode"
-            parameterType="java.util.Map" resultType="int">
-        SELECT count(id) FROM
-        IUSP_COMMON_LOGIN_USER
-        WHERE 1=1
-        <if test = "dept != null and dept !='' ">
-            AND BMBM  IN
-            <foreach item="item" index="index" collection="depts" open="(" separator="," close=")">
-                #{item}
-            </foreach>
-        </if>
-    </select>
-
-    <insert id="addLoginUser" parameterType="org.iusp.common.bean.LoginUser">
-        INSERT INTO IUSP_COMMON_LOGIN_USER(
-        DLM,
-        XM,
-        BMBM
-        ) VALUES (
-        #{userName, jdbcType=VARCHAR},
-        #{realName, jdbcType=VARCHAR},
-        #{orgCode, jdbcType=VARCHAR}
-        )
-    </insert>
-
-    <delete id="deleteLoginUserByUserName" parameterType="java.util.Map">
-        DELETE FROM IUSP_COMMON_LOGIN_USER where DLM = #{userName}
-    </delete>
-
-    <select id="findStudentInfoByUserName" parameterType="java.util.Map"
-            resultMap="sessionUserMap">
-        SELECT a.ZGH,a.XM,b.GWBM,b.GWMC,b.SFFZR,c.BMBM,c.BMMC,c.ZZLX FROM IUSP_COMMON_STUDENT a,IUSP_COMMON_TEACHER_ORG b, IUSP_COMMON_ORG c
-        WHERE a.ZGH = b.ZGH AND b.ZZBM = c.BMBM AND a.ZGH = #{userName}
-    </select>
-
-    <select id="findTeacherInfoByUserName" parameterType="java.util.Map"
-            resultMap="sessionUserMap">
-        SELECT a.ZGH,a.XM,b.GWBM,b.GWMC,b.SFFZR,c.BMBM,c.BMMC,c.ZZLX FROM IUSP_COMMON_TEACHER a,IUSP_COMMON_TEACHER_ORG b, IUSP_COMMON_ORG c
-        WHERE a.ZGH = b.ZGH AND b.ZZBM = c.BMBM AND a.ZGH = #{userName}
-    </select>
-
-    <select id="findTeacherInfoByOrgCode" parameterType="java.util.Map"
-            resultMap="teacherMap">
-        SELECT a.* FROM IUSP_COMMON_TEACHER a,IUSP_COMMON_TEACHER_ORG b
-        WHERE a.ZGH = b.ZGH AND b.ZZBM = #{orgCode} ORDER BY GWBM ASC
-    </select>
-
-    <select id="gettotalcount" resultType="int" parameterType="java.util.Map">
-        select count(id) from IUSP_COMMON_USER where 1=1
-    </select>
-
-    <select id="queryUserForPage" parameterType="java.util.Map" resultMap="userMap">
-        select * from IUSP_COMMON_USER where 1=1
-        limit #{startIndex},#{pageSize}
-    </select>
 
     <select id="findUserByUserName" parameterType="org.iusp.common.bean.User"
             resultMap="userMap">

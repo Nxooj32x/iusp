@@ -1,16 +1,23 @@
 package org.iusp.common.controller;
 
+import org.iusp.base.BaseController;
+import org.iusp.base.model.MessageBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("auth")
-public class LoginLogoutController {
+public class LoginLogoutController extends BaseController {
 
     protected static Logger logger = LoggerFactory.getLogger(LoginLogoutController.class);
   
@@ -40,12 +47,14 @@ public class LoginLogoutController {
      *  
      * @return 
      */  
-    @RequestMapping(value = "/denied", method = RequestMethod.GET)  
-    public String getDeniedPage() {  
+    @RequestMapping(value = "/denied", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getDeniedPage(HttpServletRequest request,
+                                HttpServletResponse response) {
   
-        logger.debug("Received request to show denied page");  
-  
-        return "deniedpage";  
+        logger.debug("Received request to show denied page");
+
+        return outActionReturn(response,new MessageBean(true,"删除成功"), HttpStatus.OK);
   
     }  
 }  

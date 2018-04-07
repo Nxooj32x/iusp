@@ -1,13 +1,9 @@
 package org.iusp.common.service;
 
 
-import org.iusp.common.bean.LoginUser;
-import org.iusp.common.bean.SessionUser;
+import org.iusp.base.exception.DaoException;
+import org.iusp.base.exception.ServiceException;
 import org.iusp.common.bean.User;
-import org.iusp.utils.QueryResult;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -18,22 +14,5 @@ import java.util.Map;
  * @since [产品/模块版本] （可选）
  */
 public interface UserService {
-
-    public User findUserById(Integer id);
-
-    public QueryResult<User> getUserByPageno(int pageno, Map paramMap);
-
-    public User findUserByUserName(String userName);
-
-    public List<User> selectAll();
-
-    LoginUser findLoginUserByUserName(String userName);
-
-    int addLoginUser(LoginUser loginUser);
-
-    int deleteLoginUserByUserName(String userName);
-
-    int findLoginUserCountByOrgCode(String dept,List<String> depts);
-
-    public SessionUser findSessionUserByUserName(String userName, String roleCode);
+    public User findUserByUserName(String userName) throws  DaoException ,ServiceException;
 }

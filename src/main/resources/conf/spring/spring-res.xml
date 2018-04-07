@@ -9,9 +9,9 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-<!--	<bean id="configDao" class="org.iusp.base.dao.impl.xml.ConfigImplDao">
+	<bean id="configDao" class="org.iusp.base.dao.impl.xml.ConfigImplDao">
 		<property name="basePath" value="classpath:./xml"/>
-	</bean>-->
+	</bean>
 
 	<!-- 初始化properties文件,变量值可通过系统属性更改 -->
 	<bean id="propertyConfig"
@@ -40,10 +40,31 @@
 
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
-			<tx:method name="add*" propagation="REQUIRED" />
-			<tx:method name="modify*" propagation="REQUIRED" />
-			<tx:method name="delete*" propagation="REQUIRED" />
-			<tx:method name="do*" propagation="REQUIRED" />
+			<!--REQUIRED 表示：支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。-->
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="insert*" propagation="REQUIRED"/>
+			<tx:method name="add*" propagation="REQUIRED"/>
+			<tx:method name="register*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="modify*" propagation="REQUIRED"/>
+			<tx:method name="edit*" propagation="REQUIRED"/>
+			<tx:method name="batch*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="del*" propagation="REQUIRED"/>
+			<tx:method name="deleteAndRepair" propagation="REQUIRED"/>
+			<tx:method name="remove*" propagation="REQUIRED"/>
+			<tx:method name="time*" propagation="REQUIRED"/><!--定时器方法-->
+			<tx:method name="repair" propagation="REQUIRED"/>
+
+			<!--以这些单词开头的方法不加入事务-->
+			<!--SUPPORTS 表示：支持当前事务，如果当前没有事务，就以非事务方式执行。-->
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="load*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="search*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="datagrid*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="show*" propagation="SUPPORTS" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
 </beans>

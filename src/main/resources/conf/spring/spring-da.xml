@@ -77,6 +77,13 @@
 		</property>
 	</bean>
 
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 注入sqlSessionFactory -->
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+		<!-- 给出需要扫描Dao接口包 -->
+		<property name="basePackage" value="org.iusp.common.dao" />
+	</bean>
+
 	<context:annotation-config />
 	<mvc:annotation-driven />
 </beans>

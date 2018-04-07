@@ -1,5 +1,7 @@
 package org.iusp.common.auth;
 
+import org.iusp.base.exception.DaoException;
+import org.iusp.base.exception.ServiceException;
 import org.iusp.common.bean.SessionUser;
 import org.iusp.common.bean.User;
 import org.iusp.common.service.UserService;
@@ -28,7 +30,12 @@ public class UserAuthenticationProvider implements AuthenticationProvider  {
         SessionUser sessionUser = new SessionUser();
         if(token.getPrincipal()!=null && token.getCredentials()!=null){
 
-            User userByUserName = userService.findUserByUserName(token.getPrincipal().toString());
+            User userByUserName = null;
+            try {
+                userByUserName = userService.findUserByUserName(token.getPrincipal().toString());
+            } catch (Exception e) {
+                new AuthenticationServiceException(e.getMessage());
+            }
             if(userByUserName != null){
                 if(userByUserName.getPassword() != null && userByUserName.getPassword().equals( StringUtil.md5(token.getCredentials().toString()))){
                     sessionUser.setUserName(token.getPrincipal().toString());

@@ -20,6 +20,8 @@ import org.iusp.base.model.ErrorMsg;
 import org.iusp.common.bean.SessionUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.MessageSource;
+import org.springframework.context.MessageSourceAware;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,6 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * 〈Controller基类〉
@@ -35,9 +38,9 @@ import java.io.IOException;
  * @see [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */
-public class BaseController {
+public class BaseController implements MessageSourceAware {
     public final Logger logger = LoggerFactory.getLogger(getClass());
-
+    public MessageSource messageSource;
     protected void redirectUrl(String url, HttpServletResponse response) {
         try {
             response.sendRedirect(url);
@@ -151,4 +154,11 @@ public class BaseController {
         return obj;
     }
 
+    @Override
+    public void setMessageSource(MessageSource messageSource) {
+        String message = messageSource.getMessage("test.login",
+                new Object [] {"用户：王老板","2012-11-23 11:28:01"}, Locale.CHINA);
+        logger.info(message);
+        this.messageSource = messageSource;
+    }
 }

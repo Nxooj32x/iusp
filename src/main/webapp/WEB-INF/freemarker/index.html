@@ -1,40 +1,258 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Perspective Seat Preview | Codrops</title>
-    <meta name="description" content="An experimental demo where a 3D perspective preview is shown for a selected seat in a cinema room." />
-    <meta name="keywords" content="cinema, seat booking, seating plan, perspective, 3d" />
-    <meta name="author" content="Codrops" />
+    <title>Login | Template</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="${resRoot}/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="${resRoot}/css/component.css" />
-    <script src="${resRoot}/js/modernizr-custom.js"></script>
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="${resRoot}/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${resRoot}/assets/css/style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="${resRoot}/assets/css/headers/header-default.css">
+    <link rel="stylesheet" href="${resRoot}/assets/css/footers/footer-v1.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="${resRoot}/assets/plugins/animate.css">
+    <link rel="stylesheet" href="${resRoot}/assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="${resRoot}/assets/plugins/font-awesome/css/font-awesome.min.css">
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="${resRoot}/assets/css/pages/page_log_reg_v1.css">
 </head>
-<body class="loading">
-<header class="header">
-    <h1 class="header__title">Love Preview</h1>
-</header>
-<div class="plan">
-    <div class="rows rows--mini" id="j-rows">
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div class="container">
+            <!-- Logo -->
+            <a class="logo" href="/">
+                <img src="${resRoot}/assets/img/img.jpg" alt="Logo">
+            </a>
+            <!-- End Logo -->
+
+            <!-- Topbar -->
+            <div class="topbar">
+                <ul class="loginbar pull-right">
+                    <li class="hoverSelector">
+                        <i class="fa fa-globe"></i>
+                        <a>Languages</a>
+                        <ul class="languages hoverSelectorBlock">
+                            <li class="active">
+                                <a href="#">English <i class="fa fa-check"></i></a>
+                            </li>
+                            <li><a href="#">Spanish</a></li>
+                            <li><a href="#">Russian</a></li>
+                            <li><a href="#">German</a></li>
+                        </ul>
+                    </li>
+                    <li class="topbar-devider"></li>
+                    <li><a href="/">Help</a></li>
+                    <li class="topbar-devider"></li>
+                    <li><a href="/">Login</a></li>
+                </ul>
+            </div>
+            <!-- End Topbar -->
+
+            <!-- Toggle get grouped for better mobile display -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="fa fa-bars"></span>
+            </button>
+            <!-- End Toggle -->
+        </div><!--/end container-->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <!-- Home -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Home
+                        </a>
+                    </li>
+                    <!-- End Home -->
+
+
+                    <!-- Portfolio -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Portfolio
+                        </a>
+                    </li>
+                    <!-- End Portfolio -->
+
+                    <!-- Features -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Features
+                        </a>
+                    </li>
+                    <!-- End Features -->
+
+                    <!-- Misc Pages -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Misc
+                        </a>
+                    </li>
+                    <!-- End Misc Pages -->
+
+                    <!-- Search Block -->
+                    <li>
+                        <i class="search fa fa-search search-btn"></i>
+                        <div class="search-open">
+                            <div class="input-group animated fadeInDown">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="input-group-btn">
+                                    <button class="btn-u" type="button">Go</button>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- End Search Block -->
+                </ul>
+            </div><!--/end container-->
+        </div><!--/navbar-collapse-->
     </div>
-    <!-- /rows -->
-</div><!-- /plan -->
-<script src="${resRoot}/js/jquery.min.js"></script>
-<script src="${resRoot}/js/imagesloaded.pkgd.min.js"></script>
-<script type="text/javascript" src="${resRoot}/assets/js/seajs/sea-debug.js"></script>
+    <div class="container content">
+        <div class="row">
+            <div style="padding-top: 44px;line-height: 18px;margin-left: 4.33%;" class="col-md-7 md-margin-bottom-50">
+                <h2 class="welcome-title">Welcome to Login</h2>
+                <p>Suspendisse et tincidunt ipsum, et dignissim urna. Vestibulum nisl tortor, gravida at magna et, suscipit vehicula massa.</p><br>
+                <div class="info-block-v2">
+                    <i class="icon icon-layers"></i>
+                    <div class="info-block-in">
+                        <h3>Pellentesque vulputate</h3>
+                        <p>Vestibulum non ex volutpat, sodales diam sit amet, semper nunc. Integer sed nibh commodo, tincidunt nisi.</p>
+                    </div>
+                </div>
+                <div class="info-block-v2">
+                    <i class="icon icon-settings"></i>
+                    <div class="info-block-in">
+                        <h3>Curabitur tincidunt</h3>
+                        <p>Vestibulum non ex volutpat, sodales diam sit amet, semper nunc. Integer sed nibh commodo, tincidunt nisi.</p>
+                    </div>
+                </div>
+                <div class="info-block-v2">
+                    <i class="icon icon-paper-plane"></i>
+                    <div class="info-block-in">
+                        <h3>Aenean condimentum</h3>
+                        <p>Vestibulum non ex volutpat, sodales diam sit amet, semper nunc. Integer sed nibh commodo, tincidunt nisi.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <form class="reg-page">
+                    <div class="reg-header">
+                        <h2>Login to your account</h2>
+                    </div>
+
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input id="j-input-userName" type="text" placeholder="Username" class="form-control">
+                    </div>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input id="j-input-password" type="password" placeholder="Password" class="form-control">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 checkbox">
+                            <label><input type="checkbox"> Stay signed in</label>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn-u pull-right" id="j-btn-login" type="button">Login</button>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h4>Forget your Password ?</h4>
+                    <p>no worries, <a class="color-green" href="#">click here</a> to reset your password.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-v1">
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            2015 &copy; All Rights Reserved.
+                            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                        </p>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="col-md-6">
+                        <ul class="footer-socials list-inline">
+                            <li>
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+                                    <i class="fa fa-skype"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
+                                    <i class="fa fa-pinterest"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Social Links -->
+                </div>
+            </div>
+        </div><!--/copyright-->
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="${resRoot}/assets/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="${resRoot}/assets/plugins/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="${resRoot}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${resRoot}/js/dialog/dialog-plus.js"></script>
+<script type="text/javascript" src="${resRoot}/js/utils/iusp-msg.js"></script>
+<script type="text/javascript" src="${resRoot}/js/utils/iuspUtil.js"></script>
+<script type="text/javascript" src="${resRoot}/js/utils/iusp-ajax.js"></script>
+<script type="text/javascript" src="${resRoot}/js/utils/assert.js"></script>
+<script type="text/javascript" src="${resRoot}/assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="${resRoot}/assets/plugins/smoothScroll.js"></script>
+<script type="text/javascript" src="${resRoot}/js/login/login.js"></script>
 <script>
-    seajs.config({
-        alias:{},
-        // 调试模式
-        debug: true,
-        base:"${resRoot}/js/module/",
-        // 文件编码
-        charset: 'utf-8'
+    $(function(){
+        login.init("${resRoot}","${base}");
     });
 </script>
-<script type="text/javascript" src="${resRoot}/js/module/main.js"></script>
-</body>
 </html>

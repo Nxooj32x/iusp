@@ -8,14 +8,7 @@
           http://www.springframework.org/schema/security/spring-security-4.0.xsd ">
     <security:http pattern="/dwr/**" security="none"/>
     <security:http pattern="/RES/**" security="none"/>
-    <security:http pattern="/css/**" security="none"/>
     <security:http pattern="/errorPage/**" security="none"/>
-
-    <security:http pattern="/img/**" security="none"/>
-    <security:http pattern="/static/**" security="none"/>
-    <security:http pattern="/innerHtml/**" security="none"/>
-    <security:http pattern="/js/**" security="none"/>
-    <security:http pattern="/locale/**" security="none"/>
 
     <security:http pattern="/favicon.ico" security="none"/>
     <security:http pattern="/druid/**" security="none"/>
@@ -25,9 +18,6 @@
         <security:custom-filter ref="clientFilter" after="SECURITY_CONTEXT_FILTER"/>
         <security:access-denied-handler ref="accessDeniedHandler"/>
         <security:intercept-url pattern="/" access="permitAll"/>
-        <security:intercept-url pattern="/main/common" access="hasRole('ROLE_USER')" method="GET"/>
-        <security:intercept-url pattern="/main/admin" access="hasRole('ROLE_ADMIN')" method="GET"/>
-
         <security:intercept-url pattern="/**" access="authenticated"/>
         <security:logout invalidate-session="true" logout-url="/auth/logout" logout-success-url="/"/>
         <security:csrf disabled="true"/>

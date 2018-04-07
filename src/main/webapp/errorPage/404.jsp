@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>南京航空航天大学金城学院信息化用户服务平台</title>
+    <title>HTTP 404 错误</title>
 </head>
 <body>
-	404
+HTTP 404 错误 链接指向的网页不存在
 </body>
 </html>

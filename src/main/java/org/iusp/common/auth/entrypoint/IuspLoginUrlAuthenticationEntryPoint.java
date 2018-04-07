@@ -1,6 +1,5 @@
 package org.iusp.common.auth.entrypoint;
 
-import com.google.gson.JsonObject;
 import org.iusp.base.model.ErrorMsg;
 import org.iusp.utils.BasicAjaxUtil;
 import org.springframework.http.HttpStatus;

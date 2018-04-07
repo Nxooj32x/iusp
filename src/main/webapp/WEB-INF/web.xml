@@ -8,6 +8,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
+            classpath:conf/spring/spring-locale.xml,
             classpath:conf/spring/spring-service.xml,
             classpath:conf/spring/spring-dao.xml,
             classpath:conf/spring/spring-security.xml,
@@ -21,12 +22,6 @@
             org.iusp.base.listener.IuspContextLoaderListener
         </listener-class>
     </listener>
-    <listener>
-        <listener-class>
-           org.iusp.utils.SessionCounter
-        </listener-class>
-    </listener>
-
 
     <filter>
         <filter-name>hiddenHttpMethodFilter</filter-name>
@@ -166,7 +161,7 @@
     </servlet-mapping>  
 
     <session-config>
-        <session-timeout>30</session-timeout>
+        <session-timeout>-1</session-timeout>
         <cookie-config>
             <name>JSESSIONID</name>
             <http-only>true</http-only>
@@ -182,6 +177,10 @@
     <error-page>
         <error-code>500</error-code>
         <location>/errorPage/500.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>415</error-code>
+        <location>/errorPage/415.jsp</location>
     </error-page>
     <error-page>
         <error-code>404</error-code>

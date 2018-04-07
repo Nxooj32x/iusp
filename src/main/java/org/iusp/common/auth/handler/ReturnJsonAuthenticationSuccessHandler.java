@@ -32,8 +32,6 @@ public class ReturnJsonAuthenticationSuccessHandler implements AuthenticationSuc
         SessionUser sessionUser = (SessionUser)authentication;
         request.getSession().setAttribute(SessionUser.CURRENT_USER,sessionUser);
 
-        addLoginUser(sessionUser);
-
         SavedRequest savedRequest = requestCache.getRequest(request, response);
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("flag", true);
@@ -49,15 +47,5 @@ public class ReturnJsonAuthenticationSuccessHandler implements AuthenticationSuc
         }
 
         BasicAjaxUtil.writeJson(response, jsonObject.toString());
-    }
-
-    private void addLoginUser(SessionUser sessionUser) {
-        SessionUser su = userService.findSessionUserByUserName(sessionUser.getUserName(), sessionUser.getRoleCode());
-        LoginUser loginUser = new LoginUser();
-        loginUser.setOrgCode(su.getOrgCode());
-        loginUser.setUserName(su.getUserName());
-        loginUser.setRealName(su.getRealName());
-        userService.addLoginUser(loginUser);
-        log.info("{} 用户登入系统",sessionUser.getUserName());
     }
 }

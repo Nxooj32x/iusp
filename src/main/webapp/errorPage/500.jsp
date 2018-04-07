@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>南京航空航天大学金城学院信息化用户服务平台</title>
+    <title>http500内部错误</title>
 </head>
 <body>
-	500
+    http 500内部服务器（HTTP-Internal Server Error）错误
 </body>
 </html>

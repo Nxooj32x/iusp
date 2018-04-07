@@ -308,16 +308,6 @@ public class StringUtil {
         return strData;
     }
 
-    public StringBuilder buildPageSqlForOracle(String sql, QueryResult<?> page) {
-        StringBuilder pageSql = new StringBuilder(100);
-        String beginrow = String.valueOf(page.getIndexNumber());
-        String endrow = String.valueOf(page.getPageNumber() * page.getPageSize());
-        pageSql.append("select * from ( select temp.*, rownum row_id from ( ");
-        pageSql.append(sql);
-        pageSql.append(" ) temp where rownum <= ").append(endrow);
-        pageSql.append(") where row_id > ").append(beginrow);
-        return pageSql;
-    }
 
     /**
      * 拼接sql语句ID
